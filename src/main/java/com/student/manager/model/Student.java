@@ -20,9 +20,7 @@ import com.student.manager.common.Gender;
 import com.student.manager.common.Semester;
 import com.student.manager.common.StudentYear;
 
-/**
- * @author Veera Marisetty
- */
+
 @Data
 @Entity
 @Table(name="STUDENT")

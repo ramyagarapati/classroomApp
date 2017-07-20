@@ -1,7 +1,6 @@
 package com.student.manager.controller;
 
 import static com.student.manager.controller.WebSocketConfiguration.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.annotation.HandleAfterCreate;
 import org.springframework.data.rest.core.annotation.HandleAfterDelete;
@@ -13,9 +12,6 @@ import org.springframework.stereotype.Component;
 
 import com.student.manager.model.Student;
 
-/**
- * @author Veera Marisetty.
- */
 @Component
 @RepositoryEventHandler(Student.class)
 public class StudentEventHandler {

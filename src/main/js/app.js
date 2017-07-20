@@ -24,6 +24,7 @@ class App extends React.Component {
     	  
         <div className = "tabs">
         <label>
+        <div className="container">
         	<ul>
         		<div className = "tab">
         		<label ><Link to="/home" >Home</Link></label>
@@ -39,6 +40,7 @@ class App extends React.Component {
         		</div>
         	
             </ul>    
+            </div>
             </label><br />
              <div>
              <ul><div>{this.props.children || <Home/>}</div></ul>

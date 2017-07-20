@@ -73,7 +73,7 @@ class StudentList extends React.Component {
 			<div>
 			
 				{pageInfo}
-				<div className="pages2"><label>Students per page - <input ref="pageSize" defaultValue={this.props.pageSize} onInput={this.handleInput}/></label></div>
+				<div className="pages2"><label><h3>Students per page - <input ref="pageSize" defaultValue={this.props.pageSize} onInput={this.handleInput}/></h3></label></div>
 				
 				<table>
 					<tbody>

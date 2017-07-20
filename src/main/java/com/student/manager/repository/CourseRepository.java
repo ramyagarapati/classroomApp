@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.student.manager.model.Course;
 import com.student.manager.model.Student;
+import com.student.manager.model.Staff;
 
 /**
  * @author Veera Marisetty

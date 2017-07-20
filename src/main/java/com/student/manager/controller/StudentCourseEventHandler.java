@@ -14,9 +14,6 @@ import org.springframework.stereotype.Component;
 import com.student.manager.model.Student;
 import com.student.manager.model.StudentCourse;
 
-/**
- * @author Veera Marisetty.
- */
 @Component
 @RepositoryEventHandler(StudentCourse.class)
 public class StudentCourseEventHandler {

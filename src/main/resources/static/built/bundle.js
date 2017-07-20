@@ -79,7 +79,7 @@
 	
 	var _staffPage2 = _interopRequireDefault(_staffPage);
 	
-	var _coursesPage = __webpack_require__(/*! ./components/coursesPage */ 372);
+	var _coursesPage = __webpack_require__(/*! ./components/coursesPage */ 376);
 	
 	var _coursesPage2 = _interopRequireDefault(_coursesPage);
 	
@@ -116,57 +116,61 @@
 	          'label',
 	          null,
 	          _react2.default.createElement(
-	            'ul',
-	            null,
+	            'div',
+	            { className: 'container' },
 	            _react2.default.createElement(
-	              'div',
-	              { className: 'tab' },
+	              'ul',
+	              null,
 	              _react2.default.createElement(
-	                'label',
-	                null,
+	                'div',
+	                { className: 'tab' },
 	                _react2.default.createElement(
-	                  _reactRouter.Link,
-	                  { to: '/home' },
-	                  'Home'
+	                  'label',
+	                  null,
+	                  _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/home' },
+	                    'Home'
+	                  )
 	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'tab' },
+	              ),
 	              _react2.default.createElement(
-	                'label',
-	                null,
+	                'div',
+	                { className: 'tab' },
 	                _react2.default.createElement(
-	                  _reactRouter.Link,
-	                  { to: '/students' },
-	                  'Student'
+	                  'label',
+	                  null,
+	                  _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/students' },
+	                    'Student'
+	                  )
 	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'tab' },
+	              ),
 	              _react2.default.createElement(
-	                'label',
-	                null,
+	                'div',
+	                { className: 'tab' },
 	                _react2.default.createElement(
-	                  _reactRouter.Link,
-	                  { to: '/staff' },
-	                  'Staff'
+	                  'label',
+	                  null,
+	                  _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/staff' },
+	                    'Staff'
+	                  )
 	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'tab' },
+	              ),
 	              _react2.default.createElement(
-	                'label',
-	                null,
+	                'div',
+	                { className: 'tab' },
 	                _react2.default.createElement(
-	                  _reactRouter.Link,
-	                  { to: '/courses' },
-	                  'Courses'
+	                  'label',
+	                  null,
+	                  _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/courses' },
+	                    'Courses'
+	                  )
 	                )
 	              )
 	            )
@@ -48915,8 +48919,12 @@
 						_react2.default.createElement(
 							'label',
 							null,
-							'Students per page - ',
-							_react2.default.createElement('input', { ref: 'pageSize', defaultValue: this.props.pageSize, onInput: this.handleInput })
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Students per page - ',
+								_react2.default.createElement('input', { ref: 'pageSize', defaultValue: this.props.pageSize, onInput: this.handleInput })
+							)
 						)
 					),
 					_react2.default.createElement(
@@ -61454,7 +61462,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	   value: true
+		value: true
 	});
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -61462,6 +61470,18 @@
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(/*! react-dom */ 37);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _staffList = __webpack_require__(/*! ./staffList */ 372);
+	
+	var _staffList2 = _interopRequireDefault(_staffList);
+	
+	var _createDialogSf = __webpack_require__(/*! ./createDialogSf */ 375);
+	
+	var _createDialogSf2 = _interopRequireDefault(_createDialogSf);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -61471,37 +61491,901 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	var when = __webpack_require__(/*! when */ 257);
+	var client = __webpack_require__(/*! ./common/client */ 277);
+	
+	var follow = __webpack_require__(/*! ./common/follow */ 305); // function to hop multiple links by "rel"
+	var stompClient = __webpack_require__(/*! ./common/websocket-listener */ 306);
+	var root = '/api';
+	
 	var StaffPage = function (_React$Component) {
-	   _inherits(StaffPage, _React$Component);
+		_inherits(StaffPage, _React$Component);
 	
-	   function StaffPage() {
-	      _classCallCheck(this, StaffPage);
+		function StaffPage(props) {
+			_classCallCheck(this, StaffPage);
 	
-	      return _possibleConstructorReturn(this, (StaffPage.__proto__ || Object.getPrototypeOf(StaffPage)).apply(this, arguments));
-	   }
+			var _this = _possibleConstructorReturn(this, (StaffPage.__proto__ || Object.getPrototypeOf(StaffPage)).call(this, props));
 	
-	   _createClass(StaffPage, [{
-	      key: 'render',
-	      value: function render() {
-	         return _react2.default.createElement(
-	            'div',
-	            null,
-	            _react2.default.createElement(
-	               'h4',
-	               null,
-	               'Staff..'
-	            )
-	         );
-	      }
-	   }]);
+			_this.state = { staffs: [], attributes: [], page: 1, pageSize: 4, links: {} };
+			_this.updatePageSize = _this.updatePageSize.bind(_this);
+			_this.onCreate = _this.onCreate.bind(_this);
+			_this.onUpdate = _this.onUpdate.bind(_this);
+			_this.onDelete = _this.onDelete.bind(_this);
+			_this.onNavigate = _this.onNavigate.bind(_this);
+			_this.refreshCurrentPage = _this.refreshCurrentPage.bind(_this);
+			_this.refreshAndGoToLastPage = _this.refreshAndGoToLastPage.bind(_this);
+			return _this;
+		}
 	
-	   return StaffPage;
+		_createClass(StaffPage, [{
+			key: 'loadFromServer',
+			value: function loadFromServer(pageSize) {
+				var _this2 = this;
+	
+				follow(client, root, [{ rel: 'staffs', params: { size: pageSize } }]).then(function (staffCollection) {
+					return client({
+						method: 'GET',
+						path: staffCollection.entity._links.profile.href,
+						headers: { 'Accept': 'application/schema+json' }
+					}).then(function (schema) {
+						// tag::json-schema-filter[]
+						/**
+	      * Filter unneeded JSON Schema properties, like uri references and
+	      * subtypes ($ref).
+	      */
+						Object.keys(schema.entity.properties).forEach(function (property) {
+							if (schema.entity.properties[property].hasOwnProperty('format') && schema.entity.properties[property].format === 'uri') {
+								delete schema.entity.properties[property];
+							} else if (schema.entity.properties[property].hasOwnProperty('$ref')) {
+								delete schema.entity.properties[property];
+							}
+						});
+	
+						_this2.schema = schema.entity;
+						_this2.links = staffCollection.entity._links;
+						return staffCollection;
+						// end::json-schema-filter[]
+					});
+				}).then(function (staffCollection) {
+					_this2.page = staffCollection.entity.page;
+					return staffCollection.entity._embedded.staffs.map(function (staff) {
+						return client({
+							method: 'GET',
+							path: staff._links.self.href
+						});
+					});
+				}).then(function (staffPromises) {
+					return when.all(staffPromises);
+				}).done(function (staffs) {
+					_this2.setState({
+						page: _this2.page,
+						staffs: staffs,
+						attributes: Object.keys(_this2.schema.properties),
+						pageSize: pageSize,
+						links: _this2.links
+					});
+				});
+			}
+			// tag::on-create[]
+	
+		}, {
+			key: 'onCreate',
+			value: function onCreate(newStaff) {
+				follow(client, root, ['staffs']).done(function (response) {
+					client({
+						method: 'POST',
+						path: response.entity._links.self.href,
+						entity: newStaff,
+						headers: { 'Content-Type': 'application/json' }
+					});
+				});
+			}
+			// end::on-create[]
+	
+			// tag::on-update[]
+	
+		}, {
+			key: 'onUpdate',
+			value: function onUpdate(staff, updatedStaff) {
+				client({
+					method: 'PUT',
+					path: staff.entity._links.self.href,
+					entity: updatedStaff,
+					headers: {
+						'Content-Type': 'application/json',
+						'If-Match': staff.headers.Etag
+					}
+				}).done(function (response) {
+					/* Let the websocket handler update the state */
+				}, function (response) {
+					if (response.status.code === 403) {
+						alert('ACCESS DENIED: You are not authorized to update ' + staff.entity._links.self.href);
+					}
+					if (response.status.code === 412) {
+						alert('DENIED: Unable to update ' + staff.entity._links.self.href + '. Your copy is stale.');
+					}
+				});
+			}
+			// end::on-update[]
+	
+			// tag::on-delete[]
+	
+		}, {
+			key: 'onDelete',
+			value: function onDelete(staff) {
+				client({ method: 'DELETE', path: staff.entity._links.self.href }).done(function (response) {/* let the websocket handle updating the UI */}, function (response) {
+					if (response.status.code === 403) {
+						alert('ACCESS DENIED: You are not authorized to delete ' + staff.entity._links.self.href);
+					}
+				});
+			}
+			// end::on-delete[]
+	
+		}, {
+			key: 'onNavigate',
+			value: function onNavigate(navUri) {
+				var _this3 = this;
+	
+				client({
+					method: 'GET',
+					path: navUri
+				}).then(function (staffCollection) {
+					_this3.links = staffCollection.entity._links;
+					_this3.page = staffCollection.entity.page;
+	
+					return staffCollection.entity._embedded.staffs.map(function (staff) {
+						return client({
+							method: 'GET',
+							path: staff._links.self.href
+						});
+					});
+				}).then(function (staffPromises) {
+					return when.all(staffPromises);
+				}).done(function (staffs) {
+					_this3.setState({
+						page: _this3.page,
+						staffs: staffs,
+						attributes: Object.keys(_this3.schema.properties),
+						pageSize: _this3.state.pageSize,
+						links: _this3.links
+					});
+				});
+			}
+	
+			// tag::websocket-handlers[]
+	
+		}, {
+			key: 'refreshAndGoToLastPage',
+			value: function refreshAndGoToLastPage(message) {
+				var _this4 = this;
+	
+				follow(client, root, [{
+					rel: 'staffs',
+					params: { size: this.state.pageSize }
+				}]).done(function (response) {
+					if (response.entity._links.last !== undefined) {
+						_this4.onNavigate(response.entity._links.last.href);
+					} else {
+						_this4.onNavigate(response.entity._links.self.href);
+					}
+				});
+			}
+		}, {
+			key: 'refreshCurrentPage',
+			value: function refreshCurrentPage(message) {
+				var _this5 = this;
+	
+				follow(client, root, [{
+					rel: 'staffs',
+					params: {
+						size: this.state.pageSize,
+						page: this.state.page.number
+					}
+				}]).then(function (staffCollection) {
+					_this5.links = staffCollection.entity._links;
+					_this5.page = staffCollection.entity.page;
+	
+					return staffCollection.entity._embedded.staffs.map(function (staff) {
+						return client({
+							method: 'GET',
+							path: staff._links.self.href
+						});
+					});
+				}).then(function (staffPromises) {
+					return when.all(staffPromises);
+				}).then(function (staffs) {
+					_this5.setState({
+						page: _this5.page,
+						staffs: staffs,
+						attributes: Object.keys(_this5.schema.properties),
+						pageSize: _this5.state.pageSize,
+						links: _this5.links
+					});
+				});
+			}
+			// end::websocket-handlers[]
+	
+		}, {
+			key: 'updatePageSize',
+			value: function updatePageSize(pageSize) {
+				if (pageSize !== this.state.pageSize) {
+					this.loadFromServer(pageSize);
+				}
+			}
+	
+			// tag::register-handlers[]
+	
+		}, {
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				this.loadFromServer(this.state.pageSize);
+				stompClient.register([{ route: '/topic/newStaff', callback: this.refreshAndGoToLastPage }, { route: '/topic/updateStaff', callback: this.refreshCurrentPage }, { route: '/topic/deleteStaff', callback: this.refreshCurrentPage }]);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(_createDialogSf2.default, { attributes: this.state.attributes, onCreate: this.onCreate }),
+					_react2.default.createElement(_staffList2.default, { page: this.state.page,
+						staffs: this.state.staffs,
+						links: this.state.links,
+						pageSize: this.state.pageSize,
+						attributes: this.state.attributes,
+						onNavigate: this.onNavigate,
+						onUpdate: this.onUpdate,
+						onDelete: this.onDelete,
+						updatePageSize: this.updatePageSize })
+				);
+			}
+		}]);
+	
+		return StaffPage;
 	}(_react2.default.Component);
 	
 	exports.default = StaffPage;
 
 /***/ }),
 /* 372 */
+/*!*********************************************!*\
+  !*** ./src/main/js/components/staffList.js ***!
+  \*********************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(/*! react-dom */ 37);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _staff = __webpack_require__(/*! ./staff */ 373);
+	
+	var _staff2 = _interopRequireDefault(_staff);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var StaffList = function (_React$Component) {
+		_inherits(StaffList, _React$Component);
+	
+		function StaffList(props) {
+			_classCallCheck(this, StaffList);
+	
+			var _this = _possibleConstructorReturn(this, (StaffList.__proto__ || Object.getPrototypeOf(StaffList)).call(this, props));
+	
+			_this.handleNavFirst = _this.handleNavFirst.bind(_this);
+			_this.handleNavPrev = _this.handleNavPrev.bind(_this);
+			_this.handleNavNext = _this.handleNavNext.bind(_this);
+			_this.handleNavLast = _this.handleNavLast.bind(_this);
+			_this.handleInput = _this.handleInput.bind(_this);
+			return _this;
+		}
+	
+		_createClass(StaffList, [{
+			key: 'handleInput',
+			value: function handleInput(e) {
+				e.preventDefault();
+				var pageSize = _reactDom2.default.findDOMNode(this.refs.pageSize).value;
+				if (/^[0-9]+$/.test(pageSize)) {
+					this.props.updatePageSize(pageSize);
+				} else {
+					_reactDom2.default.findDOMNode(this.refs.pageSize).value = pageSize.substring(0, pageSize.length - 1);
+				}
+			}
+		}, {
+			key: 'handleNavFirst',
+			value: function handleNavFirst(e) {
+				e.preventDefault();
+				this.props.onNavigate(this.props.links.first.href);
+			}
+		}, {
+			key: 'handleNavPrev',
+			value: function handleNavPrev(e) {
+				e.preventDefault();
+				this.props.onNavigate(this.props.links.prev.href);
+			}
+		}, {
+			key: 'handleNavNext',
+			value: function handleNavNext(e) {
+				e.preventDefault();
+				this.props.onNavigate(this.props.links.next.href);
+			}
+		}, {
+			key: 'handleNavLast',
+			value: function handleNavLast(e) {
+				e.preventDefault();
+				this.props.onNavigate(this.props.links.last.href);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _this2 = this;
+	
+				var pageInfo = this.props.page.hasOwnProperty("number") ? _react2.default.createElement(
+					'h3',
+					{ className: 'pages' },
+					'Page ',
+					this.props.page.number + 1,
+					' of ',
+					this.props.page.totalPages
+				) : null;
+	
+				var staffs = this.props.staffs.map(function (staff) {
+					return _react2.default.createElement(_staff2.default, { key: staff.entity._links.self.href,
+						staff: staff,
+						attributes: _this2.props.attributes,
+						onUpdate: _this2.props.onUpdate,
+						onDelete: _this2.props.onDelete });
+				});
+	
+				var navLinks = [];
+				if ("first" in this.props.links) {
+					navLinks.push(_react2.default.createElement(
+						'button',
+						{ key: 'first', onClick: this.handleNavFirst },
+						'<<'
+					));
+				}
+				if ("prev" in this.props.links) {
+					navLinks.push(_react2.default.createElement(
+						'button',
+						{ key: 'prev', onClick: this.handleNavPrev },
+						'<'
+					));
+				}
+				if ("next" in this.props.links) {
+					navLinks.push(_react2.default.createElement(
+						'button',
+						{ key: 'next', onClick: this.handleNavNext },
+						'>'
+					));
+				}
+				if ("last" in this.props.links) {
+					navLinks.push(_react2.default.createElement(
+						'button',
+						{ key: 'last', onClick: this.handleNavLast },
+						'>>'
+					));
+				}
+	
+				return _react2.default.createElement(
+					'div',
+					null,
+					pageInfo,
+					_react2.default.createElement(
+						'div',
+						{ className: 'pages2' },
+						_react2.default.createElement(
+							'label',
+							null,
+							_react2.default.createElement(
+								'h3',
+								null,
+								'Staffs per page - ',
+								_react2.default.createElement('input', { ref: 'pageSize', defaultValue: this.props.pageSize, onInput: this.handleInput })
+							)
+						)
+					),
+					_react2.default.createElement(
+						'table',
+						null,
+						_react2.default.createElement(
+							'tbody',
+							null,
+							_react2.default.createElement(
+								'tr',
+								null,
+								_react2.default.createElement(
+									'th',
+									null,
+									'First Name'
+								),
+								_react2.default.createElement(
+									'th',
+									null,
+									'Last Name'
+								),
+								_react2.default.createElement(
+									'th',
+									null,
+									'Department'
+								),
+								_react2.default.createElement(
+									'th',
+									null,
+									'Join Date'
+								),
+								_react2.default.createElement(
+									'th',
+									null,
+									'ETC'
+								),
+								_react2.default.createElement(
+									'th',
+									null,
+									'Update Staff'
+								),
+								_react2.default.createElement(
+									'th',
+									null,
+									'Delete Staff'
+								)
+							),
+							staffs
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						null,
+						navLinks
+					)
+				);
+			}
+		}]);
+	
+		return StaffList;
+	}(_react2.default.Component);
+	
+	exports.default = StaffList;
+
+/***/ }),
+/* 373 */
+/*!*****************************************!*\
+  !*** ./src/main/js/components/staff.js ***!
+  \*****************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(/*! react-dom */ 37);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	var _updateDialogSf = __webpack_require__(/*! ./updateDialogSf */ 374);
+	
+	var _updateDialogSf2 = _interopRequireDefault(_updateDialogSf);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Staff = function (_React$Component) {
+		_inherits(Staff, _React$Component);
+	
+		function Staff(props) {
+			_classCallCheck(this, Staff);
+	
+			var _this = _possibleConstructorReturn(this, (Staff.__proto__ || Object.getPrototypeOf(Staff)).call(this, props));
+	
+			_this.handleDelete = _this.handleDelete.bind(_this);
+			return _this;
+		}
+	
+		_createClass(Staff, [{
+			key: 'handleDelete',
+			value: function handleDelete() {
+				this.props.onDelete(this.props.staff);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'tr',
+					null,
+					_react2.default.createElement(
+						'td',
+						null,
+						this.props.staff.entity.firstName
+					),
+					_react2.default.createElement(
+						'td',
+						null,
+						this.props.staff.entity.lastName
+					),
+					_react2.default.createElement(
+						'td',
+						null,
+						this.props.staff.entity.department
+					),
+					_react2.default.createElement(
+						'td',
+						null,
+						this.props.staff.entity.joinDate
+					),
+					_react2.default.createElement(
+						'td',
+						null,
+						'ntng'
+					),
+					_react2.default.createElement(
+						'td',
+						null,
+						_react2.default.createElement(_updateDialogSf2.default, { staff: this.props.staff,
+							attributes: this.props.attributes,
+							onUpdate: this.props.onUpdate })
+					),
+					_react2.default.createElement(
+						'td',
+						null,
+						_react2.default.createElement(
+							'button',
+							{ onClick: this.handleDelete },
+							'Delete'
+						)
+					)
+				);
+			}
+		}]);
+	
+		return Staff;
+	}(_react2.default.Component);
+	
+	exports.default = Staff;
+
+/***/ }),
+/* 374 */
+/*!**************************************************!*\
+  !*** ./src/main/js/components/updateDialogSf.js ***!
+  \**************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(/*! react-dom */ 37);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var UpdateDialogSf = function (_React$Component) {
+		_inherits(UpdateDialogSf, _React$Component);
+	
+		function UpdateDialogSf(props) {
+			_classCallCheck(this, UpdateDialogSf);
+	
+			var _this = _possibleConstructorReturn(this, (UpdateDialogSf.__proto__ || Object.getPrototypeOf(UpdateDialogSf)).call(this, props));
+	
+			_this.handleSubmit = _this.handleSubmit.bind(_this);
+			return _this;
+		}
+	
+		_createClass(UpdateDialogSf, [{
+			key: 'handleSubmit',
+			value: function handleSubmit(e) {
+				var _this2 = this;
+	
+				e.preventDefault();
+				var newStaff = {};
+				this.props.attributes.forEach(function (attribute) {
+					newStaff[attribute] = _reactDom2.default.findDOMNode(_this2.refs[attribute]).value.trim();
+				});
+				this.props.onUpdate(newStaff);
+				this.props.attributes.forEach(function (attribute) {
+					_reactDom2.default.findDOMNode(_this2.refs[attribute]).value = ''; // clear out the dialog's inputs
+				});
+				window.location = "#";
+			}
+		}, {
+			key: 'handleChange',
+			value: function handleChange(event) {
+				this.setState({ value: event.target.value });
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _this3 = this;
+	
+				var inputs = this.props.attributes.map(function (attribute) {
+					return _react2.default.createElement(
+						'p',
+						{ key: _this3.props.staff.entity[attribute] },
+						_react2.default.createElement('input', { type: 'text', placeholder: attribute,
+							defaultValue: _this3.props.staff.entity[attribute],
+							ref: attribute, className: 'field' })
+					);
+				});
+	
+				var dialogId = "updateStaff-" + this.props.staff.entity._links.self.href;
+	
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'a',
+						{ href: "#" + dialogId },
+						'Update'
+					),
+					_react2.default.createElement(
+						'div',
+						{ id: dialogId, className: 'modalDialog' },
+						_react2.default.createElement(
+							'div',
+							null,
+							_react2.default.createElement(
+								'a',
+								{ href: '#', title: 'Close', className: 'close' },
+								'X'
+							),
+							_react2.default.createElement(
+								'h2',
+								null,
+								'Update an course'
+							),
+							_react2.default.createElement(
+								'form',
+								null,
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement('input', { type: 'text', ref: 'firstName',
+										placeholder: 'firstName', className: 'field' })
+								),
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement('input', { type: 'text', ref: 'lastName',
+										placeholder: 'lastName', className: 'field' })
+								),
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement(
+										'select',
+										{ onChange: this.handleChange, ref: 'department' },
+										_react2.default.createElement(
+											'option',
+											{ value: 'CSE' },
+											'Coumputer Science'
+										),
+										_react2.default.createElement(
+											'option',
+											{ value: 'ECE' },
+											'Electronics and Communications'
+										)
+									)
+								),
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement('input', { type: 'text', ref: 'joinDate', placeholder: 'joinDate', className: 'field' })
+								),
+								_react2.default.createElement(
+									'button',
+									{ onClick: this.handleSubmit },
+									'Update'
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+	
+		return UpdateDialogSf;
+	}(_react2.default.Component);
+	
+	exports.default = UpdateDialogSf;
+
+/***/ }),
+/* 375 */
+/*!**************************************************!*\
+  !*** ./src/main/js/components/createDialogSf.js ***!
+  \**************************************************/
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(/*! react-dom */ 37);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var CreateDialogSf = function (_React$Component) {
+		_inherits(CreateDialogSf, _React$Component);
+	
+		function CreateDialogSf(props) {
+			_classCallCheck(this, CreateDialogSf);
+	
+			var _this = _possibleConstructorReturn(this, (CreateDialogSf.__proto__ || Object.getPrototypeOf(CreateDialogSf)).call(this, props));
+	
+			_this.handleSubmit = _this.handleSubmit.bind(_this);
+			return _this;
+		}
+	
+		_createClass(CreateDialogSf, [{
+			key: 'handleSubmit',
+			value: function handleSubmit(e) {
+				var _this2 = this;
+	
+				e.preventDefault();
+				var newStaff = {};
+				this.props.attributes.forEach(function (attribute) {
+					newStaff[attribute] = _reactDom2.default.findDOMNode(_this2.refs[attribute]).value.trim();
+				});
+				this.props.onCreate(newStaff);
+				this.props.attributes.forEach(function (attribute) {
+					_reactDom2.default.findDOMNode(_this2.refs[attribute]).value = ''; // clear out the dialog's inputs
+				});
+				window.location = "#";
+			}
+		}, {
+			key: 'handleChange',
+			value: function handleChange(event) {
+				this.setState({ value: event.target.value });
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(
+						'div',
+						{ className: 'logout2' },
+						_react2.default.createElement('label', { 'for': 'create' }),
+						_react2.default.createElement(
+							'a',
+							{ href: '#createStaff' },
+							_react2.default.createElement('input', { className: 'but', type: 'submit', id: 'create', value: 'Create' })
+						)
+					),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement(
+						'div',
+						{ id: 'createStaff', className: 'modalDialog' },
+						_react2.default.createElement(
+							'div',
+							null,
+							_react2.default.createElement(
+								'a',
+								{ href: '#', title: 'Close', className: 'close' },
+								'X'
+							),
+							_react2.default.createElement(
+								'h2',
+								null,
+								'Create new staff'
+							),
+							_react2.default.createElement(
+								'form',
+								null,
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement('input', { type: 'text', ref: 'firstName',
+										placeholder: 'firstName', className: 'field' })
+								),
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement('input', { type: 'text', ref: 'lastName',
+										placeholder: 'lastName', className: 'field' })
+								),
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement(
+										'select',
+										{ onChange: this.handleChange, ref: 'department' },
+										_react2.default.createElement(
+											'option',
+											{ value: 'CSE' },
+											'Coumputer Science'
+										),
+										_react2.default.createElement(
+											'option',
+											{ value: 'ECE' },
+											'Electronics and Communications'
+										)
+									)
+								),
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement('input', { type: 'text', ref: 'joinDate', placeholder: 'joinDate', className: 'field' })
+								),
+								_react2.default.createElement(
+									'button',
+									{ onClick: this.handleSubmit },
+									'Create'
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+	
+		return CreateDialogSf;
+	}(_react2.default.Component);
+	
+	exports.default = CreateDialogSf;
+
+/***/ }),
+/* 376 */
 /*!***********************************************!*\
   !*** ./src/main/js/components/coursesPage.js ***!
   \***********************************************/
@@ -61523,11 +62407,11 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _courseList = __webpack_require__(/*! ./courseList */ 373);
+	var _courseList = __webpack_require__(/*! ./courseList */ 377);
 	
 	var _courseList2 = _interopRequireDefault(_courseList);
 	
-	var _createDialogCo = __webpack_require__(/*! ./createDialogCo */ 376);
+	var _createDialogCo = __webpack_require__(/*! ./createDialogCo */ 380);
 	
 	var _createDialogCo2 = _interopRequireDefault(_createDialogCo);
 	
@@ -61796,7 +62680,7 @@
 	exports.default = CoursePage;
 
 /***/ }),
-/* 373 */
+/* 377 */
 /*!**********************************************!*\
   !*** ./src/main/js/components/courseList.js ***!
   \**********************************************/
@@ -61818,7 +62702,7 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _course = __webpack_require__(/*! ./course */ 374);
+	var _course = __webpack_require__(/*! ./course */ 378);
 	
 	var _course2 = _interopRequireDefault(_course);
 	
@@ -61889,7 +62773,7 @@
 				var pageInfo = this.props.page.hasOwnProperty("number") ? _react2.default.createElement(
 					'h3',
 					{ className: 'pages' },
-					'Courses - Page ',
+					'Page ',
 					this.props.page.number + 1,
 					' of ',
 					this.props.page.totalPages
@@ -61943,8 +62827,12 @@
 						_react2.default.createElement(
 							'label',
 							null,
-							'courses per page - ',
-							_react2.default.createElement('input', { ref: 'pageSize', defaultValue: this.props.pageSize, onInput: this.handleInput })
+							_react2.default.createElement(
+								'h3',
+								null,
+								'courses per page - ',
+								_react2.default.createElement('input', { ref: 'pageSize', defaultValue: this.props.pageSize, onInput: this.handleInput })
+							)
 						)
 					),
 					_react2.default.createElement(
@@ -62025,7 +62913,7 @@
 	exports.default = CourseList;
 
 /***/ }),
-/* 374 */
+/* 378 */
 /*!******************************************!*\
   !*** ./src/main/js/components/course.js ***!
   \******************************************/
@@ -62047,7 +62935,7 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _updateDialogCo = __webpack_require__(/*! ./updateDialogCo */ 375);
+	var _updateDialogCo = __webpack_require__(/*! ./updateDialogCo */ 379);
 	
 	var _updateDialogCo2 = _interopRequireDefault(_updateDialogCo);
 	
@@ -62148,7 +63036,7 @@
 	exports.default = Course;
 
 /***/ }),
-/* 375 */
+/* 379 */
 /*!**************************************************!*\
   !*** ./src/main/js/components/updateDialogCo.js ***!
   \**************************************************/
@@ -62371,7 +63259,7 @@
 	exports.default = UpdateDialogCo;
 
 /***/ }),
-/* 376 */
+/* 380 */
 /*!**************************************************!*\
   !*** ./src/main/js/components/createDialogCo.js ***!
   \**************************************************/
@@ -62446,7 +63334,7 @@
 						_react2.default.createElement('label', { 'for': 'create' }),
 						_react2.default.createElement(
 							'a',
-							{ href: '#createStudent' },
+							{ href: '#createCourse' },
 							_react2.default.createElement('input', { className: 'but', type: 'submit', id: 'create', value: 'Create' })
 						)
 					),

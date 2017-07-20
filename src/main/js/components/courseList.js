@@ -47,7 +47,7 @@ class CourseList extends React.Component {
 
 	render() {
 		var pageInfo = this.props.page.hasOwnProperty("number") ?
-				<h3 className="pages">Courses - Page {this.props.page.number + 1} of {this.props.page.totalPages}</h3> : null;
+				<h3 className="pages">Page {this.props.page.number + 1} of {this.props.page.totalPages}</h3> : null;
 		
 		var courses = this.props.courses.map(course =>
 			<Course key={course.entity._links.self.href}
@@ -74,7 +74,7 @@ class CourseList extends React.Component {
 		return (
 			<div>
 				{pageInfo}
-				<div className="pages2"><label>courses per page - <input ref="pageSize" defaultValue={this.props.pageSize} onInput={this.handleInput}/></label></div>
+				<div className="pages2"><label><h3>courses per page - <input ref="pageSize" defaultValue={this.props.pageSize} onInput={this.handleInput}/></h3></label></div>
 				<table>
 					<tbody>
 						<tr>

@@ -7,12 +7,12 @@
 </head>
 <body class="content">
 	<div class="header">
-	<table style="background-color:#167F92" height="100%" width="100%" >
+	<table style="background-color:#FFCC99" height="100%" width="100%" >
 	<tr>
-	<td style="background-color:#167F92" width="20%">
-		<h1 style="color:#90EE90;text-align:center;text-shadow:5px 5px 5px #B1F1B1"><i>CSO</i></h1>
+	<td style="background-color:#FFCC99" width="20%">
+		<h1 style="color:4C9900;text-align:center;text-shadow:5px 5px 5px"><i>CSO</i></h1>
 		</td>
-		<td style="background-color:#167F92">
+		<td style="background-color:#FFCC99">
 	<pre><h2 align="left" style="color:#ffffff;text-shadow:5px 5px 5px #B2DCEA;font-size:25px"  >  Students/Staff Day-to-Day Classroom Schedule Organizer</h2></pre>
 	</td>
 	</tr>
@@ -21,7 +21,7 @@
     <!-- tag::logout[] -->
     <div class="panel" >
         <div class="welcomemsg">
-        Hello,<span th:text="${#authentication.name}">user</span>.
+       <marquee direction="right"> Hello,<span th:text="${#authentication.name}">user</span>.</marquee>
         </div>
         <div class="logout">
         <form th:action="@{/logout}" method="post">

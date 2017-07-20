@@ -10,9 +10,7 @@ import org.springframework.stereotype.Component;
 
 import com.student.manager.model.Users;
 import com.student.manager.repository.UserRepository;
-/**
- * @author Veera Marisetty.
- */
+
 @Component
 public class SpringDataJpaUserDetailsService implements UserDetailsService {
 

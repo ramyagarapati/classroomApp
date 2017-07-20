@@ -22,27 +22,30 @@ import com.student.manager.model.Course;
 import com.student.manager.model.Student;
 import com.student.manager.model.StudentCourse;
 import com.student.manager.model.Users;
+import com.student.manager.model.Staff;
+import com.student.manager.model.StaffCourse;
 import com.student.manager.repository.CourseRepository;
 import com.student.manager.repository.StudentRepository;
 import com.student.manager.repository.UserRepository;
+import com.student.manager.repository.StaffRepository;
 
-/**
- * @author Veera Marisetty.
- */
+
 @Component
 public class DatabaseLoader implements CommandLineRunner {
 
 	private final StudentRepository students;
 	private final UserRepository users;
 	private final CourseRepository courses;
+	private final StaffRepository staffs;
 
 	@Autowired
 	public DatabaseLoader(StudentRepository studentRepository,
-			UserRepository userRepository, CourseRepository courseRepository) {
+			UserRepository userRepository, CourseRepository courseRepository,StaffRepository staffRepository) {
 
 		this.students = studentRepository;
 		this.users = userRepository;
 		this.courses = courseRepository;
+		this.staffs = staffRepository;
 	}
 
 	@Override
@@ -65,6 +68,7 @@ public class DatabaseLoader implements CommandLineRunner {
 		SecurityContextHolder.clearContext();
 		
 		createStudents();
+		createStaffs();
 	}
 
 	private void createStudents() {
@@ -114,6 +118,48 @@ public class DatabaseLoader implements CommandLineRunner {
 		this.students.save(s4);
 	}
 
+	private void createStaffs() {
+
+		Course c1 = new Course("OS", "Operation Systems", StudentYear.THREE,
+				Semester.ONE, true, CourseType.CLASSROOM, 100, 40, true, Department.CSE);
+		
+		Course c2 = new Course("C", "C Programming", StudentYear.THREE,
+				Semester.ONE, true, CourseType.CLASSROOM, 100, 40, true, Department.CSE);
+	
+		this.courses.save(c1);
+		this.courses.save(c2);
+		
+//		StudentCourse sc1s1 = new StudentCourse();
+//		sc1s1.setCourse(c1);
+//		StudentCourse sc2s1 = new StudentCourse();
+//		sc2s1.setCourse(c2);
+		
+		Staff s1 = new Staff("Amit", "patel",Department.CSE, 
+				Date.valueOf(LocalDate.of(2013, 06, 1)));
+		
+//		sc1s1.setStudent(s1);
+//		sc2s1.setStudent(s1);
+//		Collection<StudentCourse> scl = new ArrayList<>();
+//		scl.add(sc1s1);
+//		scl.add(sc2s1);
+//		s1.setCurrentCourses(scl);
+		this.staffs.save(s1);
+
+		Staff s2 = new Staff("kalpana", "sharma",Department.CSE, 
+				Date.valueOf(LocalDate.of(2013, 06, 2)));
+//		s2.setCurrentCourses(scl);
+		this.staffs.save(s2);
+//		
+		Staff s3 = new Staff("suresh", "babu",Department.CSE, 
+				Date.valueOf(LocalDate.of(2013, 06, 4)));
+//		s3.setCurrentCourses(scl);
+		this.staffs.save(s3);
+//		
+		Staff s4 = new Staff("kumar", "anurup",Department.CSE, 
+				Date.valueOf(LocalDate.of(2013, 06, 3)));
+//		s4.setCurrentCourses(scl);
+		this.staffs.save(s4);
+	}
 	private void createUsers() {
 		this.users.save(new Users("rama", "pass", UserType.STAFF, "ROLE_MANAGER"));
 		this.users.save(new Users("ravi", "pass", UserType.STAFF, "ROLE_MANAGER"));

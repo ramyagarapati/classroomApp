@@ -4,43 +4,43 @@ input.field {
 
 body{
     margin:0px;
-   background:#0EFAFD;
+    background-color:#E6E6FA;
+  
 }
-table{
-	backgroun-color:#0EFAFD;
-	border:20px;
-	
-}
+
 #ID{
 	align=center;
-	 text-shadow:3px 3px 3px #167F92 ;
+	 text-shadow:3px 3px 3px #FFCC99 ;
 	 
 }
 .pages{
 	float:right;
-	display:inline;
+	display:inline-block;
 	text-align:right;
+	margin-top:35px;
+	text-color:#FFFFFF;
 	
 }
 .pages2{
 	float:left;
 	margin-top:17px;
 	margin-left:-50px;
-	display:inline;
+	display:inline-block;
 	text-align:left;
+	text-color:#FFFFFF;
 	
 }
 
 .header {
     height:100px;
-    background:#0EFAFD;
+    background:#FFCC99;
     border:1px dotted #CCC;
     width:100%;
     margin:0px auto;
 }
 .content {
     width:95%;
-    background: #F0F0F0;
+    background: #E6E6FA;
     border: 1px solid #CCC;
     height: 620px;
     margin: 20px auto;
@@ -52,7 +52,7 @@ table{
   margin-left:20px;
   font-family: 'Fenix', serif; 
   font-style: italic;
-  color: #1A1A1A;
+  color: #408080;
   font-size: 24px;
 }
 
@@ -68,13 +68,14 @@ table{
   margin-right:10px;
   font-style: italic;
   color: #777;
+  clear:both;
 }
 .tabs {
   position: relative;   
   min-height: 300px; /* This part sucks */
   clear: both;
   margin: 0px 50px 20px 0px;
-  background: #F0F0F0;
+  background: #E6E6FA;
 }
 .tab {
   float: left;
@@ -82,19 +83,33 @@ table{
   
    
 }
-.tab label {
-  background: #eee; 
-  padding: 15px 100px; 
-  border: 1px solid #ccc;
-  margin-left: -1px; 
+
+.tab label{
+width:250px;
+
+
+box-shadow: -2px 2px 4px rgba(1,1,1,1);
+padding:5px;
+ margin-left: -1px; 
   position: relative;
-  left: 1px; 
-  top: -20px;
-  text-size:50px;
-  -webkit-transition: background-color .17s linear;
   
+  top: -20px;
+  -webkit-transition: background-color .17s linear;
+display:inline-block;
+background-color:#3CD6C9;
+}
+.tab label a{
+display:block;
+padding:7px 15px;
+text-decoration:none;
+color:#990000;
 }
 
+.container{
+width:90%;
+height:10px;
+
+}
 .info, .success, .warning, .error, .validation {
 border: 1px solid;
 margin: 10px 0px;
@@ -129,10 +144,7 @@ background-image: url('error.png');
 .is-visible {
   border: solid 1px red;
 }
-/*table {
-	background-color:#cccccc;
-    border-collapse: collapse;
-}*/
+
 .but
 {
 	background-color:#81BDD1;
@@ -145,8 +157,8 @@ background-image: url('error.png');
  th {
   
     padding: 5px 25px;
-    background-color: #167F92;
-    text-color: #024457;
+    background-color: #0066CC;
+    text-color: #E6E6FA;
  	text-align:center;
   
 
@@ -158,6 +170,8 @@ background-image: url('error.png');
 table{
 	  border-collapse:collapse;
 	margin-left:-1px;
+	margin-top:10px;
+	clear:both;
 	
 }
 .padding{
@@ -253,12 +267,15 @@ a { color:#1174D4;text-decoration:none;
 	display:inline-block;
 }
 a:hover { 
-	color: #242482;
+	background:linear-gradient(top,rgba(33,105,243,0)0%,rgba(33,105,243,0.55)100%);
+background:-moz-linear-gradient(top,rgba(33,105,243,0)0%,rgba(33,105,243,0.55)100%);
+background:-webkit-linear-gradient(top,rgba(33,105,243,0)0%,rgba(33,105,243,0.55)100%);
 		 }
+
 
 .panel {
     display: block;
-    background: #F0F0F0;
+    background: #E6E6FA;
     min-height: 50px;
     margin: 10px;
     padding: 10px;

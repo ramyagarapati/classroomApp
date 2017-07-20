@@ -29,7 +29,7 @@ class CreateDialogCo extends React.Component {
 		return (
 			<div>
 			<div className="logout2"><label for="create"></label>
-			<a href="#createStudent"><input className="but" type="submit" id="create" value="Create"/></a>
+			<a href="#createCourse"><input className="but" type="submit" id="create" value="Create"/></a>
 			</div><br />
 				<div id="createCourse" className="modalDialog" >
 					<div>
