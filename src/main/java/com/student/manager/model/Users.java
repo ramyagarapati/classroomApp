@@ -1,6 +1,8 @@
 package com.student.manager.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -23,7 +25,7 @@ import com.student.manager.common.UserType;
 @Table(name="USER")
 public class Users {
 
-	public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
+	//public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
 
 	private @Id @GeneratedValue Long id;
 
@@ -31,22 +33,23 @@ public class Users {
 
 	private @JsonIgnore String password;
 
-	private String[] roles;
+	private String role;
 	
+	@Enumerated(EnumType.STRING)
 	private UserType userType;
 
-	public void setPassword(String password) {
-		this.password = PASSWORD_ENCODER.encode(password);
-	}
+//	public void setPassword(String password) {
+//		this.password = PASSWORD_ENCODER.encode(password);
+//	}
 
 	public Users() {}
 
-	public Users(String name, String password, UserType userType, String... roles) {
+	public Users(String name, String password, UserType userType, String role) {
 
 		this.name = name;
 		this.setPassword(password);
 		this.userType = userType;
-		this.roles = roles;
+		this.role = role;
 	}
 
 }

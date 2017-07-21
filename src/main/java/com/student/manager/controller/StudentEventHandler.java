@@ -17,6 +17,8 @@ import com.student.manager.model.Student;
 public class StudentEventHandler {
 
 	private final SimpMessagingTemplate websocket;
+	
+	private StudentCourseEventHandler studentCourseEventHandler;
 
 	private final EntityLinks entityLinks;
 

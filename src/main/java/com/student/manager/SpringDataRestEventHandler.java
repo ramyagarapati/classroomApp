@@ -32,7 +32,7 @@ public class SpringDataRestEventHandler {
 		if (user == null) {
 			Users newUser = new Users();
 			newUser.setName(name);
-			newUser.setRoles(new String[]{"ROLE_MANAGER"});
+			newUser.setRole("ROLE_MANAGER");
 			user = this.userRepository.save(newUser);
 		}
 	}

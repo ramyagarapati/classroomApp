@@ -33,7 +33,7 @@ class UpdateDialogCo extends React.Component {
 
 		return (
 			<div>
-				<a href={"#" + dialogId}>Update</a>
+				<a href={"#" + dialogId}>{this.props.dispName}</a>
 
 				<div id={dialogId} className="modalDialog">
 					<div>

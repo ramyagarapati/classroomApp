@@ -113,64 +113,60 @@
 	        'div',
 	        { className: 'tabs' },
 	        _react2.default.createElement(
-	          'label',
+	          'div',
 	          null,
 	          _react2.default.createElement(
-	            'div',
-	            { className: 'container' },
+	            'ul',
+	            null,
 	            _react2.default.createElement(
-	              'ul',
-	              null,
+	              'li',
+	              { className: 'tab' },
 	              _react2.default.createElement(
-	                'div',
-	                { className: 'tab' },
+	                'label',
+	                null,
 	                _react2.default.createElement(
-	                  'label',
-	                  null,
-	                  _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: '/home' },
-	                    'Home'
-	                  )
+	                  _reactRouter.Link,
+	                  { to: '/home' },
+	                  'Home'
 	                )
-	              ),
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'tab' },
 	              _react2.default.createElement(
-	                'div',
-	                { className: 'tab' },
+	                'label',
+	                null,
 	                _react2.default.createElement(
-	                  'label',
-	                  null,
-	                  _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: '/students' },
-	                    'Student'
-	                  )
+	                  _reactRouter.Link,
+	                  { to: '/students' },
+	                  'Student'
 	                )
-	              ),
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'tab' },
 	              _react2.default.createElement(
-	                'div',
-	                { className: 'tab' },
+	                'label',
+	                null,
 	                _react2.default.createElement(
-	                  'label',
-	                  null,
-	                  _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: '/staff' },
-	                    'Staff'
-	                  )
+	                  _reactRouter.Link,
+	                  { to: '/staff' },
+	                  'Staff'
 	                )
-	              ),
+	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'tab' },
 	              _react2.default.createElement(
-	                'div',
-	                { className: 'tab' },
+	                'label',
+	                null,
 	                _react2.default.createElement(
-	                  'label',
-	                  null,
-	                  _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: '/courses' },
-	                    'Courses'
-	                  )
+	                  _reactRouter.Link,
+	                  { to: '/courses' },
+	                  'Courses'
 	                )
 	              )
 	            )
@@ -48240,231 +48236,235 @@
 	                { className: 'home' },
 	                _react2.default.createElement(
 	                    'table',
-	                    { width: '80%', align: 'center' },
+	                    null,
 	                    _react2.default.createElement(
-	                        'tr',
-	                        { className: 'padding' },
+	                        'tbody',
+	                        null,
 	                        _react2.default.createElement(
-	                            'th',
-	                            null,
-	                            'Time'
+	                            'tr',
+	                            { className: 'padding' },
+	                            _react2.default.createElement(
+	                                'th',
+	                                null,
+	                                'Time'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                null,
+	                                'Monday'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                null,
+	                                'Tuesday'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                null,
+	                                'Wednesday'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                null,
+	                                'Thrusday'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                null,
+	                                'Friday'
+	                            ),
+	                            _react2.default.createElement(
+	                                'th',
+	                                null,
+	                                'Saturday'
+	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            'th',
-	                            null,
-	                            'Monday'
+	                            'tr',
+	                            { className: 'padding' },
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                '8:30am - 10:00am'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'OS'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'DBMS'
+	                            ),
+	                            _react2.default.createElement('td', { title: 'No Class', className: 'Holiday' }),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'AI'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'DOA'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'WT'
+	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            'th',
-	                            null,
-	                            'Tuesday'
+	                            'tr',
+	                            { className: 'padding' },
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                '10:00am - 11:30am'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'AI'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Elective'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'DBMS'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'OS'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'WT'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'DOA'
+	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            'th',
-	                            null,
-	                            'Wednesday'
+	                            'tr',
+	                            { className: 'padding' },
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                '11:30am - 01:00pm'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'DBMS'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'WT'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'DOA'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'DOA'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Elective'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'OS'
+	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            'th',
-	                            null,
-	                            'Thrusday'
+	                            'tr',
+	                            { className: 'padding' },
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                '02:00pm - 03:30pm'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'Elective'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'DAA'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'OS'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'DBMS LAB'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'OS'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'OS LAB'
+	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            'th',
-	                            null,
-	                            'Friday'
-	                        ),
-	                        _react2.default.createElement(
-	                            'th',
-	                            null,
-	                            'Saturday'
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'tr',
-	                        { className: 'padding' },
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            '8:30am - 10:00am'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'OS'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'DBMS'
-	                        ),
-	                        _react2.default.createElement('td', { title: 'No Class', 'class': 'Holiday' }),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'AI'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'DOA'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'WT'
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'tr',
-	                        { className: 'padding' },
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            '10:00am - 11:30am'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'AI'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'Elective'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'DBMS'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'OS'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'WT'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'DOA'
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'tr',
-	                        { className: 'padding' },
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            '11:30am - 01:00pm'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'DBMS'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'WT'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'DOA'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'DOA'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'Elective'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'OS'
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'tr',
-	                        { className: 'padding' },
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            '02:00pm - 03:30pm'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'Elective'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'DAA'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'OS'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'DBMS LAB'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'OS'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'OS LAB'
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        'tr',
-	                        { className: 'padding' },
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            '03:30pm - 05:00pm'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'DOA'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'AI'
-	                        ),
-	                        _react2.default.createElement('td', null),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'DBMS LAB'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'OS'
-	                        ),
-	                        _react2.default.createElement(
-	                            'td',
-	                            null,
-	                            'OS LAB'
+	                            'tr',
+	                            { className: 'padding' },
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                '03:30pm - 05:00pm'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'DOA'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'AI'
+	                            ),
+	                            _react2.default.createElement('td', null),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'DBMS LAB'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'OS'
+	                            ),
+	                            _react2.default.createElement(
+	                                'td',
+	                                null,
+	                                'OS LAB'
+	                            )
 	                        )
 	                    )
 	                )
@@ -48884,28 +48884,28 @@
 					navLinks.push(_react2.default.createElement(
 						'button',
 						{ key: 'first', onClick: this.handleNavFirst },
-						'<<'
+						'<< First'
 					));
 				}
 				if ("prev" in this.props.links) {
 					navLinks.push(_react2.default.createElement(
 						'button',
 						{ key: 'prev', onClick: this.handleNavPrev },
-						'<'
+						'< Prev'
 					));
 				}
 				if ("next" in this.props.links) {
 					navLinks.push(_react2.default.createElement(
 						'button',
 						{ key: 'next', onClick: this.handleNavNext },
-						'>'
+						'Next >'
 					));
 				}
 				if ("last" in this.props.links) {
 					navLinks.push(_react2.default.createElement(
 						'button',
 						{ key: 'last', onClick: this.handleNavLast },
-						'>>'
+						'Last >> '
 					));
 				}
 	
@@ -48923,81 +48923,81 @@
 								'h3',
 								null,
 								'Students per page - ',
-								_react2.default.createElement('input', { ref: 'pageSize', defaultValue: this.props.pageSize, onInput: this.handleInput })
+								_react2.default.createElement('input', { ref: 'pageSize', type: 'number', defaultValue: this.props.pageSize, onInput: this.handleInput })
 							)
 						)
 					),
 					_react2.default.createElement(
-						'table',
-						null,
-						_react2.default.createElement(
-							'tbody',
-							null,
-							_react2.default.createElement(
-								'tr',
-								null,
-								_react2.default.createElement(
-									'th',
-									null,
-									'First Name'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Last Name'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'E-mail'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Gender'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Year'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Semester'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Department'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Join Date'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Graduation Year'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Update Student'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Delete Student'
-								)
-							),
-							students
-						)
+						'div',
+						{ className: 'navLinks' },
+						navLinks
 					),
 					_react2.default.createElement(
 						'div',
 						null,
+						_react2.default.createElement(
+							'table',
+							null,
+							_react2.default.createElement(
+								'tbody',
+								null,
+								_react2.default.createElement(
+									'tr',
+									null,
+									_react2.default.createElement(
+										'th',
+										null,
+										'First Name'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Last Name'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'E-mail'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Gender'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Year'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Semester'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Department'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Join Date'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Graduation Year'
+									),
+									_react2.default.createElement('th', null)
+								),
+								students
+							)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'navLinks' },
 						navLinks
 					)
 				);
@@ -49115,17 +49115,35 @@
 					_react2.default.createElement(
 						'td',
 						null,
-						_react2.default.createElement(_updateDialog2.default, { student: this.props.student,
-							attributes: this.props.attributes,
-							onUpdate: this.props.onUpdate })
-					),
-					_react2.default.createElement(
-						'td',
-						null,
 						_react2.default.createElement(
-							'button',
-							{ onClick: this.handleDelete },
-							'Delete'
+							'div',
+							{ className: 'btn-group' },
+							_react2.default.createElement(
+								'a',
+								{ className: 'btn dropdown-toggle', 'data-toggle': 'dropdown', href: '#' },
+								'Action',
+								_react2.default.createElement('span', { className: 'caret' })
+							),
+							_react2.default.createElement(
+								'ul',
+								{ className: 'dropdown-menu' },
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(_updateDialog2.default, { student: this.props.student,
+										attributes: this.props.attributes,
+										onUpdate: this.props.onUpdate })
+								),
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(
+										'a',
+										{ className: 'delete', onClick: this.handleDelete },
+										'Delete'
+									)
+								)
+							)
 						)
 					)
 				);
@@ -61859,28 +61877,28 @@
 					navLinks.push(_react2.default.createElement(
 						'button',
 						{ key: 'first', onClick: this.handleNavFirst },
-						'<<'
+						'<<  First'
 					));
 				}
 				if ("prev" in this.props.links) {
 					navLinks.push(_react2.default.createElement(
 						'button',
 						{ key: 'prev', onClick: this.handleNavPrev },
-						'<'
+						'< Prev'
 					));
 				}
 				if ("next" in this.props.links) {
 					navLinks.push(_react2.default.createElement(
 						'button',
 						{ key: 'next', onClick: this.handleNavNext },
-						'>'
+						'Next >'
 					));
 				}
 				if ("last" in this.props.links) {
 					navLinks.push(_react2.default.createElement(
 						'button',
 						{ key: 'last', onClick: this.handleNavLast },
-						'>>'
+						'Last >>'
 					));
 				}
 	
@@ -61898,61 +61916,70 @@
 								'h3',
 								null,
 								'Staffs per page - ',
-								_react2.default.createElement('input', { ref: 'pageSize', defaultValue: this.props.pageSize, onInput: this.handleInput })
+								_react2.default.createElement('input', { type: 'number', ref: 'pageSize', defaultValue: this.props.pageSize, onInput: this.handleInput })
 							)
 						)
 					),
 					_react2.default.createElement(
-						'table',
-						null,
-						_react2.default.createElement(
-							'tbody',
-							null,
-							_react2.default.createElement(
-								'tr',
-								null,
-								_react2.default.createElement(
-									'th',
-									null,
-									'First Name'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Last Name'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Department'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Join Date'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'ETC'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Update Staff'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Delete Staff'
-								)
-							),
-							staffs
-						)
+						'div',
+						{ className: 'navLinks' },
+						navLinks
 					),
 					_react2.default.createElement(
 						'div',
 						null,
+						_react2.default.createElement(
+							'table',
+							null,
+							_react2.default.createElement(
+								'tbody',
+								null,
+								_react2.default.createElement(
+									'tr',
+									null,
+									_react2.default.createElement(
+										'th',
+										null,
+										'First Name'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Last Name'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Department'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Join Date'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'ETC'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Update Staff'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Delete Staff'
+									)
+								),
+								staffs
+							)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'navLinks' },
 						navLinks
 					)
 				);
@@ -62792,28 +62819,28 @@
 					navLinks.push(_react2.default.createElement(
 						'button',
 						{ key: 'first', onClick: this.handleNavFirst },
-						'<<'
+						'<< First'
 					));
 				}
 				if ("prev" in this.props.links) {
 					navLinks.push(_react2.default.createElement(
 						'button',
 						{ key: 'prev', onClick: this.handleNavPrev },
-						'<'
+						'< Prev'
 					));
 				}
 				if ("next" in this.props.links) {
 					navLinks.push(_react2.default.createElement(
 						'button',
 						{ key: 'next', onClick: this.handleNavNext },
-						'>'
+						'Next >'
 					));
 				}
 				if ("last" in this.props.links) {
 					navLinks.push(_react2.default.createElement(
 						'button',
 						{ key: 'last', onClick: this.handleNavLast },
-						'>>'
+						'Last >>'
 					));
 				}
 	
@@ -62831,76 +62858,76 @@
 								'h3',
 								null,
 								'courses per page - ',
-								_react2.default.createElement('input', { ref: 'pageSize', defaultValue: this.props.pageSize, onInput: this.handleInput })
+								_react2.default.createElement('input', { type: 'number', ref: 'pageSize', defaultValue: this.props.pageSize, onInput: this.handleInput })
 							)
 						)
 					),
 					_react2.default.createElement(
-						'table',
-						null,
-						_react2.default.createElement(
-							'tbody',
-							null,
-							_react2.default.createElement(
-								'tr',
-								null,
-								_react2.default.createElement(
-									'th',
-									null,
-									'Course Name'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Description'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'year'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Semester'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Course Type'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Max Marks'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Min Marks'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Department'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Update Course'
-								),
-								_react2.default.createElement(
-									'th',
-									null,
-									'Delete Course'
-								)
-							),
-							courses
-						)
+						'div',
+						{ className: 'navLinks' },
+						navLinks
 					),
 					_react2.default.createElement(
 						'div',
 						null,
+						_react2.default.createElement(
+							'table',
+							null,
+							_react2.default.createElement(
+								'tbody',
+								null,
+								_react2.default.createElement(
+									'tr',
+									null,
+									_react2.default.createElement(
+										'th',
+										null,
+										'Course Name'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Description'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'year'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Semester'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Course Type'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Max Marks'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Min Marks'
+									),
+									_react2.default.createElement(
+										'th',
+										null,
+										'Department'
+									),
+									_react2.default.createElement('th', null)
+								),
+								courses
+							)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'navLinks' },
 						navLinks
 					)
 				);
@@ -62973,7 +63000,10 @@
 					_react2.default.createElement(
 						'td',
 						null,
-						this.props.course.entity.name
+						_react2.default.createElement(_updateDialogCo2.default, { course: this.props.course,
+							attributes: this.props.attributes,
+							onUpdate: this.props.onUpdate,
+							dispName: this.props.course.entity.name })
 					),
 					_react2.default.createElement(
 						'td',
@@ -63013,17 +63043,10 @@
 					_react2.default.createElement(
 						'td',
 						null,
-						_react2.default.createElement(_updateDialogCo2.default, { course: this.props.course,
-							attributes: this.props.attributes,
-							onUpdate: this.props.onUpdate })
-					),
-					_react2.default.createElement(
-						'td',
-						null,
 						_react2.default.createElement(
 							'button',
-							{ onClick: this.handleDelete },
-							'Delete'
+							{ className: 'delete', onClick: this.handleDelete },
+							'X'
 						)
 					)
 				);
@@ -63114,7 +63137,7 @@
 					_react2.default.createElement(
 						'a',
 						{ href: "#" + dialogId },
-						'Update'
+						this.props.dispName
 					),
 					_react2.default.createElement(
 						'div',

@@ -5,7 +5,6 @@ input.field {
 body{
     margin:0px;
     background-color:#E6E6FA;
-  
 }
 
 #ID{
@@ -35,19 +34,30 @@ body{
     height:100px;
     background:#FFCC99;
     border:1px dotted #CCC;
-    width:100%;
     margin:0px auto;
 }
+.logo {
+	background-color:#FFCC99;
+	color:#4C9900;
+	text-align:center;
+	text-shadow:5px 5px 5px;
+}
+.logo2 {
+	background-color:#FFCC99;
+	color:#ffffff;
+	text-align:center;
+	text-shadow:5px 5px 5px #B2DCEA;
+	font-size:25px;
+}
 .content {
-    width:95%;
+	position:relative;
+	width:95%;
     background: #E6E6FA;
     border: 1px solid #CCC;
-    height: 620px;
+    height: 700px;
     margin: 20px auto;
 }
-
 .welcomemsg {
-  
   float:left;
   margin-left:20px;
   font-family: 'Fenix', serif; 
@@ -63,15 +73,35 @@ body{
   color: #777;
 }
 .logout2{
-  
   float:left;
   margin-right:10px;
   font-style: italic;
   color: #777;
   clear:both;
 }
+
+.delete {
+  display: inline-block;
+     width: 20px;
+    height: 20px;
+    text-align: center;
+  background-color: #FF4242;
+    border-radius: 50%;
+  font-size: 10px;
+  font-weight : bold;
+  line-height: 20px;
+  cursor: pointer;
+}
+.navLinks {
+	position: relative;
+  	float : left;
+}
+.navLinks button {
+	background-color: #8fcccc;
+}
 .tabs {
-  position: relative;   
+  position: relative;
+  float : left;
   min-height: 300px; /* This part sucks */
   clear: both;
   margin: 0px 50px 20px 0px;
@@ -80,20 +110,15 @@ body{
 .tab {
   float: left;
   text-size:50px;
-  
-   
 }
 
 .tab label{
-width:250px;
-
-
+width:200px;
 box-shadow: -2px 2px 4px rgba(1,1,1,1);
 padding:5px;
  margin-left: -1px; 
   position: relative;
-  
-  top: -20px;
+    top: -20px;
   -webkit-transition: background-color .17s linear;
 display:inline-block;
 background-color:#3CD6C9;
@@ -105,10 +130,8 @@ text-decoration:none;
 color:#990000;
 }
 
-.container{
+.container {
 width:90%;
-height:10px;
-
 }
 .info, .success, .warning, .error, .validation {
 border: 1px solid;
@@ -145,8 +168,7 @@ background-image: url('error.png');
   border: solid 1px red;
 }
 
-.but
-{
+.but {
 	background-color:#81BDD1;
 	padding:8%;
 	color:white;
@@ -154,41 +176,34 @@ background-image: url('error.png');
 	border-radius:5px;
 }
 
+table {
+	border-collapse:collapse;
+	margin-left:-1px;
+	margin-top:10px;
+	clear:both;
+	border-spacing: 0;
+}
  th {
-  
     padding: 5px 25px;
     background-color: #0066CC;
     text-color: #E6E6FA;
  	text-align:center;
-  
-
-   font-family:arial;
-   font-size:15px;
-  
-   
-}
-table{
-	  border-collapse:collapse;
-	margin-left:-1px;
-	margin-top:10px;
-	clear:both;
-	
+   font-family:Tahoma, sans-serif;
+   font-size:15px;  
 }
 .padding{
 	padding:5px 30px;
 }
 .home
 {
-	
 	padding:5px 25px;
 }
 td{
 	text-align:center;
 	 /*border: 1px solid #FFF;*/
 	 padding: 5px 22px;
-	 font-family:arial;
+	 font-family:Tahoma, sans-serif;
 	 font-size:15px;
-	
 }
 tr:nth-child(even){
 	background-color:#B2DCEA
@@ -202,7 +217,7 @@ tr:nth-child(odd){
 
 .modalDialog {
     position: fixed;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Tahoma, sans-serif, Helvetica;
     top: 0;
     right: 0;
     bottom: 0;
@@ -254,10 +269,10 @@ tr:nth-child(odd){
 
 .close:hover { background: #00d9ff; }
 
-h1 { color: #aa4411; font-size: 36px; font-family: 'Signika', sans-serif; padding-bottom: 0px; }
+h1 { color: #aa4411; font-size: 36px; font-family: Tahoma, sans-serif; padding-bottom: 0px; }
 
 
-p { font-family: 'Inder', sans-serif; line-height: 28px; margin-bottom: 15px; color: #666; }
+p { font-family: Tahoma, sans-serif; line-height: 28px; margin-bottom: 15px; color: #666; }
 
 
 a { color:#1174D4;text-decoration:none;
@@ -271,14 +286,29 @@ a:hover {
 background:-moz-linear-gradient(top,rgba(33,105,243,0)0%,rgba(33,105,243,0.55)100%);
 background:-webkit-linear-gradient(top,rgba(33,105,243,0)0%,rgba(33,105,243,0.55)100%);
 		 }
-
-
 .panel {
     display: block;
     background: #E6E6FA;
     min-height: 50px;
     margin: 10px;
     padding: 10px;
+}
+
+.panel1 {
+    display: block;
+    background: #E6E6FA;
+    min-height: 400px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.footer {
+    display: block;
+    background: #E6E6FA;
+    min-height: 50px;
+    margin: 10px;
+    padding: 10px;
+}
 }
 
 
