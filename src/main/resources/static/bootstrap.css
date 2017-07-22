@@ -3420,7 +3420,11 @@ input[type="button"].btn-block {
 
 .btn-warning:active,
 .btn-warning.active {
+<<<<<<< HEAD
   background-color: #c676059;
+=======
+  background-color: #c67605 \9;
+>>>>>>> fd3504233e8758619d2da6d32f6c5eb7aea53621
 }
 
 .btn-danger {
@@ -3648,7 +3652,11 @@ input[type="submit"].btn.btn-mini {
   margin-left: 5px;
 }
 
+<<<<<<< HEAD
 .btn-group> .btn {
+=======
+.btn-group > .btn {
+>>>>>>> fd3504233e8758619d2da6d32f6c5eb7aea53621
   position: relative;
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
