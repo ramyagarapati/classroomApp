@@ -4,37 +4,40 @@
 	<meta charset="UTF-8" />
 	<title>Classroom manager</title>
 	<link rel="stylesheet" href="/main.css" />
+	<link rel="stylesheet" href="/bootstrap-responsive.css" />
+	<link rel="stylesheet" href="/bootstrap.css" />
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/boostrap/3.3.7/js/bootstrap.min.js"></script>-->
+	
 </head>
 <body class="content">
 	<div class="header">
-	<table style="background-color:#FFCC99" height="100%" width="100%" >
-	<tr>
-	<td style="background-color:#FFCC99" width="20%">
-		<h1 style="color:4C9900;text-align:center;text-shadow:5px 5px 5px"><i>CSO</i></h1>
-		</td>
-		<td style="background-color:#FFCC99">
-	<pre><h2 align="left" style="color:#ffffff;text-shadow:5px 5px 5px #B2DCEA;font-size:25px"  >  Students/Staff Day-to-Day Classroom Schedule Organizer</h2></pre>
-	</td>
-	</tr>
-	</table>
+		<div class="logo">
+				<h1><i>CSO</i></h1>
+		</div>
+		<div class="logo2">
+			<h2>Students/Staff - Classroom Schedule Organizer</h2>
+		</div>
 	</div>
     <!-- tag::logout[] -->
-    <div class="panel" >
+    <div class="panel">
         <div class="welcomemsg">
-       <marquee direction="right"> Hello,<span th:text="${#authentication.name}">user</span>.</marquee>
+       		<marquee direction="right"> Hello,<span th:text="${#authentication.name}">user</span>.</marquee>
         </div>
         <div class="logout">
-        <form th:action="@{/logout}" method="post">
-            <input class="but" type="submit" value="Log Out"/>
-        </form>
+	        <form th:action="@{/logout}" method="post">
+	            <input class="but" type="submit" value="Log Out"/>
+	        </form>
         </div>
-        <br/>
     </div>
     
-    <div id="react"></div>
+    <div id="react" class="panel1"> </div>
     <!-- end::logout[] -->
-
-	<div class="footer">© RGUKT - 2017</div>
+	<br/>
+	<br/>
+	<div class="footer" >© RGUKT - 2017</div>
 	
     <script src="built/bundle.js"></script>
 

@@ -5,7 +5,8 @@ class Home extends React.Component {
    render() {
       return (
          <div className="home">          
-                <table width="80%" align="center" >
+                <table>
+                <tbody>
                 <tr className="padding">
                     <th>Time</th>
                     <th>Monday</th>
@@ -17,11 +18,10 @@ class Home extends React.Component {
                 </tr> 
 
                 <tr className="padding">
-                    <td>8:30am - 10:00am</td>
-                    
+                    	<td>8:30am - 10:00am</td>
                         <td>OS</td>
                         <td>DBMS</td>
-                        <td title="No Class" class="Holiday"></td>
+                        <td title="No Class" className="Holiday"></td>
                         <td>AI</td>
                         <td>DOA</td>
                         <td>WT</td>                   
@@ -71,6 +71,7 @@ class Home extends React.Component {
                         <td>OS</td>
                         <td>OS LAB</td>
                 </tr>
+                </tbody>
             </table>
          </div>
       )

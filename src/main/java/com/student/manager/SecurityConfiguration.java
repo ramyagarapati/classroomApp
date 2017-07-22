@@ -11,9 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import com.student.manager.model.Users;
 import com.student.manager.service.SpringDataJpaUserDetailsService;
 
-/**
- * @author Veera Marisetty.a
- */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -25,8 +22,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth
-			.userDetailsService(this.userDetailsService)
-				.passwordEncoder(Users.PASSWORD_ENCODER);
+			.userDetailsService(this.userDetailsService);
+//				.passwordEncoder(Users.PASSWORD_ENCODER);
 	}
 
 	@Override

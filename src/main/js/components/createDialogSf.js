@@ -37,17 +37,17 @@ class CreateDialogSf extends React.Component {
 
 						<h2>Create new staff</h2>
 						<form>
-							<p><input type="text" ref ="firstName"
-							 placeholder="firstName" className="field" /></p>
-    						<p><input type="text" ref ="lastName"
-							placeholder="lastName" className="field"/></p>
+							<p> <label for="firstName">FirstName</label><input type="text" ref ="firstName"
+							 id="firstName" className="field" /></p>
+    						<p><label for="lastName">LastName</label><input type="text" ref ="lastName"
+							id="lastName" className="field"/></p>
 							
-							<p><select onChange={this.handleChange} ref ="department">
+							<p><label for="dept">Department</label><select onChange={this.handleChange} id="dept" ref ="department">
 									<option value="CSE">Coumputer Science</option>
 									<option value="ECE">Electronics and Communications</option>
 								</select></p>
-							<p><input type="text" ref ="joinDate" placeholder="joinDate" className="field"/></p>
-    						
+							<p><label for="date">JoinDate</label>
+							<input type="date" ref="joinDate" id="date" name="bday" className="field"/></p>
     						
 							<button onClick={this.handleSubmit}>Create</button>
 						</form>

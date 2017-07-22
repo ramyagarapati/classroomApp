@@ -13,7 +13,6 @@ class Student extends React.Component {
 	handleDelete() {
 		this.props.onDelete(this.props.student);
 	}
-
 	render() {
 		return (
 			<tr>
@@ -27,12 +26,18 @@ class Student extends React.Component {
 				<td>{this.props.student.entity.joinDate}</td>
 				<td>{this.props.student.entity.graduationYear}</td>
 				<td>
-					<UpdateDialog student={this.props.student}
-								  attributes={this.props.attributes}
-								  onUpdate={this.props.onUpdate} />
-				</td>
-				<td>
-					<button onClick={this.handleDelete}>Delete</button>
+					<div className="dropdown">
+						<a className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" href="#">
+				    		Action
+				    	<span className="caret"></span>
+				    	</a>
+						<ul className="dropdown-menu">
+							<li><UpdateDialog student={this.props.student}
+							  attributes={this.props.attributes}
+							  onUpdate={this.props.onUpdate} /></li>
+							<li><a className="delete" onClick={this.handleDelete}>Delete</a></li>
+						</ul>
+					</div>
 				</td>
 			</tr>
 		)

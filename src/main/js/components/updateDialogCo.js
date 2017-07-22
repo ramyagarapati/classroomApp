@@ -33,7 +33,7 @@ class UpdateDialogCo extends React.Component {
 
 		return (
 			<div>
-				<a href={"#" + dialogId}>Update</a>
+				<a href={"#" + dialogId}>{this.props.dispName}</a>
 
 				<div id={dialogId} className="modalDialog">
 					<div>
@@ -42,36 +42,37 @@ class UpdateDialogCo extends React.Component {
 						<h2>Update an course</h2>
 
 						<form>
-							<p><input type="text" ref ="name"
-								 placeholder="courseName" className="field" /></p>
-	   						<p><input type="text" ref ="description"
-								placeholder="description" className="field"/></p>						
-								<p><select onChange={this.handleChange} ref ="year">
-										<option value="ONE">1</option>
-										<option value="TWO">2</option>
-										<option value="THREE">3</option>
-										<option value="FOUR">4</option>
-									</select></p>
-								<p><select onChange={this.handleChange}  ref ="semester">
-										<option value="ONE">1</option>
-										<option value="TWO">2</option>
-									</select></p>
-									
-									<p><select onChange={this.handleChange} ref ="courseType">
-									<option value="CLASSROOM">classroom</option>
-									<option value="LAB">lab</option>
+						<p><input type="text" ref ="name"
+							 placeholder="courseName" className="field" /></p>
+ 						<p><input type="text" ref ="description"
+							placeholder="description" className="field"/></p>
+							<p><select onChange={this.handleChange} ref ="year">
+							<option selected="selected">Year</option>
+									<option value="ONE">1</option>
+									<option value="TWO">2</option>
+									<option value="THREE">3</option>
+									<option value="FOUR">4</option>
 								</select></p>
-								<p><input type="number" ref ="maximumMarks"
-									placeholder="maximumMarks" className="field"/></p>
-								<p><input type="number" ref ="minimumPassMarks"
-									placeholder="minimumPassMarks" className="field"/></p>
-								
-								<p><select onChange={this.handleChange} ref ="department">
-										<option value="CSE">Coumputer Science</option>
-										<option value="ECE">Electronics and Communications</option>
-									</select></p>							
-	   						
-							<button onClick={this.handleSubmit}>Update</button>
+							<p><select onChange={this.handleChange} ref ="semester">
+									<option selected="selected">Semester</option>
+									<option value="ONE">1</option>
+									<option value="TWO">2</option>
+								</select></p>
+								<p><select onChange={this.handleChange} ref ="courseType">
+								<option selected="selected">CourseType</option>
+								<option value="CLASSROOM">classroom</option>
+								<option value="LAB">lab</option>
+							</select></p>
+							<p><input type="number" ref ="maximumMarks"
+								placeholder="maxmarks" className="field"/></p>
+							<p><input type="number" ref ="minimumPassMarks"
+								placeholder="minimarks" className="field"/></p>
+							<p><select onChange={this.handleChange} ref ="department">
+							<option selected="selected">Department</option>
+									<option value="CSE">Coumputer Science</option>
+									<option value="ECE">Electronics and Communications</option>
+								</select></p>
+						<button onClick={this.handleSubmit}>Create</button>
 						</form>
 					</div>
 				</div>

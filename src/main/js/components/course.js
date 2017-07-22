@@ -17,7 +17,10 @@ class Course extends React.Component {
 	render() {
 		return (
 			<tr>
-				<td>{this.props.course.entity.name}</td>
+				<td><UpdateDialogCo course={this.props.course}
+				  attributes={this.props.attributes}
+				  onUpdate={this.props.onUpdate}
+				dispName={this.props.course.entity.name} /></td>
 				<td>{this.props.course.entity.description}</td>
 				<td>{this.props.course.entity.year}</td>
 				<td>{this.props.course.entity.semester}</td>
@@ -25,11 +28,6 @@ class Course extends React.Component {
 				<td>{this.props.course.entity.maximumMarks}</td>
 				<td>{this.props.course.entity.minimumPassMarks}</td>
 				<td>{this.props.course.entity.department}</td>
-				<td>
-					<UpdateDialogCo course={this.props.course}
-								  attributes={this.props.attributes}
-								  onUpdate={this.props.onUpdate} />
-				</td>
 				<td>
 					<button onClick={this.handleDelete}>Delete</button>
 				</td>

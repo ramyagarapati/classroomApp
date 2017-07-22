@@ -23,25 +23,23 @@ class App extends React.Component {
       return (
     	  
         <div className = "tabs">
-        <label>
-        <div className="container">
-        	<ul>
-        		<div className = "tab">
-        		<label ><Link to="/home" >Home</Link></label>
-        		</div>
-        		<div className = "tab">
-        		<label ><Link to="/students" >Student</Link></label>
-        		</div>
-        		<div className = "tab">
-        		<label ><Link to="/staff">Staff</Link></label>
-        		</div>
-        		<div className = "tab">
-        		<label ><Link to="/courses">Courses</Link></label>
-        		</div>
-        	
-            </ul>    
+        	<div>
+	        	<ul>
+	        		<li className = "tab">
+	        		<label><Link to="/home" >Home</Link></label>
+	        		</li>
+	        		<li className = "tab">
+	        		<label ><Link to="/students" >Student</Link></label>
+	        		</li>
+	        		<li className = "tab">
+	        		<label ><Link to="/staff">Staff</Link></label>
+	        		</li>
+	        		<li className = "tab">
+	        		<label ><Link to="/courses">Courses</Link></label>
+	        		</li>
+	            </ul>    
             </div>
-            </label><br />
+            <br />
              <div>
              <ul><div>{this.props.children || <Home/>}</div></ul>
      		</div>

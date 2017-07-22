@@ -1,19 +1,23 @@
 package com.student.manager.model;
 
 import java.sql.Date;
-import java.util.Collection;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
-
+import javax.validation.constraints.NotNull;
 import lombok.Data;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.student.manager.common.Department;
 import com.student.manager.common.Gender;
@@ -27,15 +31,28 @@ import com.student.manager.common.StudentYear;
 public class Student {
 
 	private @Id @GeneratedValue Long id;
+	@NotNull
 	private String firstName;
+	@NotNull
 	private String lastName;
+	@Enumerated(EnumType.STRING)
 	private Gender gender;
 	private String email;
+	@Enumerated(EnumType.STRING)
 	private StudentYear currentYear;
+	@Enumerated(EnumType.STRING)
 	private Semester currentSemester;
+	@Enumerated(EnumType.STRING)
 	private Department department;
+	@NotNull
 	private Date joinDate;
+	@NotNull
 	private int graduationYear;
+
+	@JsonIgnore
+	@OneToMany(targetEntity=StudentCourse.class, cascade=CascadeType.REMOVE, 
+	fetch=FetchType.LAZY, mappedBy="student")
+	private Set<Course> courses;
 	
 	private @Version @JsonIgnore Long version;
 	

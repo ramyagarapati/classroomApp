@@ -1,5 +1,4 @@
 'use strict';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -42,34 +41,39 @@ class UpdateDialog extends React.Component {
 						<h2>Update an student</h2>
 
 						<form>
-							<p><input type="text" ref ="firstName"
-								 placeholder="firstName" className="field" /></p>
-	   						<p><input type="text" ref ="lastName"
-								placeholder="lastName" className="field"/></p>
-								<p><select onChange={this.handleChange} ref ="gender">
-										<option value="MALE">Male</option>
-										<option value="FEMALE">Female</option>
-									</select></p>
-								<p><select onChange={this.handleChange} ref ="currentYear">
-										<option value="ONE">1</option>
-										<option value="TWO">2</option>
-										<option value="THREE">3</option>
-										<option value="FOUR">4</option>
-									</select></p>
-								<p><select onChange={this.handleChange}  ref ="currentSemester">
-										<option value="ONE">1</option>
-										<option value="TWO">2</option>
-									</select></p>
-	   						<p><input type="text" placeholder="email" ref ="email"
-								 className="field"/></p>
-								<p><select onChange={this.handleChange} ref ="department">
-										<option value="CSE">Coumputer Science</option>
-										<option value="ECE">Electronics and Communications</option>
-									</select></p>
-								<p><input type="text" ref ="joinDate" placeholder="joinDate" className="field"/></p>
-	   						<p><input type="number" ref ="graduationYear"
-								placeholder="graduationYear" className="field"/></p>
-							<button onClick={this.handleSubmit}>Update</button>
+						
+						<p><input type="text" ref ="firstName"
+							 placeholder="firstName" className="field" /></p>
+   						<p><input type="text" ref ="lastName"
+							placeholder="lastName" className="field"/></p>
+   						<p><select onChange={this.handleChange} ref ="gender">
+									<option value="MALE">Male</option>
+									<option value="FEMALE">Female</option>
+								</select></p>
+							<p><select onChange={this.handleChange} ref ="currentYear">
+									<option selected="selected">Year</option>
+									<option value="ONE">1</option>
+									<option value="TWO">2</option>
+									<option value="THREE">3</option>
+									<option value="FOUR">4</option>
+								</select></p>
+							<p><select onChange={this.handleChange} ref ="currentSemester">
+							<option selected="selected">Semester</option>
+									<option value="ONE">1</option>
+									<option value="TWO">2</option>
+								</select></p>
+   						<p><input type="text" placeholder="E-mail" ref ="email"
+							 className="field"/></p>
+							<p><select onChange={this.handleChange}  ref ="department">
+									<option selected="selected">Department</option>
+									<option value="CSE">Coumputer Science</option>
+									<option value="ECE">Electronics and Communications</option>
+								</select></p>
+							<p><label for="joindate">JoinDate</label><input type="Date" ref ="joinDate" placeholder="joindate" className="field"/></p>
+   						<p><label for="gyear">GraduationYear</label><input type="year" ref ="graduationYear"
+							id="gyear" className="field"/></p>	
+							<button onClick={this.handleSubmit}>Create</button>
+						
 						</form>
 					</div>
 				</div>

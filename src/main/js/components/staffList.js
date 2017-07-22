@@ -57,39 +57,39 @@ class StaffList extends React.Component {
 
 		var navLinks = [];
 		if ("first" in this.props.links) {
-			navLinks.push(<button key="first" onClick={this.handleNavFirst}>&lt;&lt;</button>);
+			navLinks.push(<button key="first" onClick={this.handleNavFirst}>&lt;&lt;  First</button>);
 		}
 		if ("prev" in this.props.links) {
-			navLinks.push(<button key="prev" onClick={this.handleNavPrev}>&lt;</button>);
+			navLinks.push(<button key="prev" onClick={this.handleNavPrev}>&lt; Prev</button>);
 		}
 		if ("next" in this.props.links) {
-			navLinks.push(<button key="next" onClick={this.handleNavNext}>&gt;</button>);
+			navLinks.push(<button key="next" onClick={this.handleNavNext}>Next &gt;</button>);
 		}
 		if ("last" in this.props.links) {
-			navLinks.push(<button key="last" onClick={this.handleNavLast}>&gt;&gt;</button>);
+			navLinks.push(<button key="last" onClick={this.handleNavLast}>Last &gt;&gt;</button>);
 		}
 
 		return (
 			<div>
-			
 				{pageInfo}
-				<div className="pages2"><label><h3>Staffs per page - <input ref="pageSize" defaultValue={this.props.pageSize} onInput={this.handleInput}/></h3></label></div>
-				
-				<table>
-					<tbody>
-						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Department</th>
-							<th>Join Date</th>
-							<th>ETC</th>
-							<th>Update Staff</th>
-							<th>Delete Staff</th>
-						</tr>
-						{staffs}
-					</tbody>
-				</table>
+				<div className="pages2"><label><h3>Staffs per page - <input type="number" ref="pageSize" defaultValue={this.props.pageSize} onInput={this.handleInput}/></h3></label></div>
 				<div>
+					<table>
+						<tbody>
+							<tr>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Department</th>
+								<th>Join Date</th>
+								<th>ETC</th>
+								<th>Update Staff</th>
+								<th>Delete Staff</th>
+							</tr>
+							{staffs}
+						</tbody>
+					</table>
+				</div>
+				<div className="navLinks">
 					{navLinks}
 				</div>
 			</div>

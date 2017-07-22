@@ -5,6 +5,8 @@ import java.util.Collection;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,6 +31,7 @@ public class Staff {
 	private @Id @GeneratedValue Long id;
 	private String firstName;
 	private String lastName;
+	@Enumerated(EnumType.STRING)
 	private Department department;
 	private Date joinDate;
 	private @Version @JsonIgnore Long version;
