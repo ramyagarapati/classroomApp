@@ -45,6 +45,7 @@ public class Course {
 	@JsonIgnore
 	@OneToMany(targetEntity=StudentCourse.class, cascade=CascadeType.REMOVE, 
 	fetch=FetchType.LAZY, mappedBy="course")
+	
 	private Set<Student> students;
 	
 	private boolean active;

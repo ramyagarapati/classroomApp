@@ -52,9 +52,10 @@ body{
 .content {
 	position:relative;
 	width:95%;
+	height : auto;
     background: #E6E6FA;
     border: 1px solid #CCC;
-    height: 700px;
+    min-height: 700px;
     margin: 20px auto;
 }
 .welcomemsg {
@@ -296,6 +297,8 @@ background:-webkit-linear-gradient(top,rgba(33,105,243,0)0%,rgba(33,105,243,0.55
 
 .panel1 {
     display: block;
+    position : relative;
+    height:auto;
     background: #E6E6FA;
     min-height: 400px;
     margin: 10px;
@@ -303,7 +306,8 @@ background:-webkit-linear-gradient(top,rgba(33,105,243,0)0%,rgba(33,105,243,0.55
 }
 
 .footer {
-    display: block;
+    display:inline-block;
+    position : relative;
     background: #E6E6FA;
     min-height: 50px;
     margin: 10px;

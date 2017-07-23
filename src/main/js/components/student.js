@@ -26,13 +26,8 @@ class Student extends React.Component {
 				<td>{this.props.student.entity.joinDate}</td>
 				<td>{this.props.student.entity.graduationYear}</td>
 				<td>
-<<<<<<< HEAD
-					<div className="dropdown">
-						<a className="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" href="#">
-=======
 					<div className="btn-group">
-						<a className="btn dropdown-toggle" data-toggle="dropdown" href="#">
->>>>>>> fd3504233e8758619d2da6d32f6c5eb7aea53621
+						<a className="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
 				    		Action
 				    	<span className="caret"></span>
 				    	</a>
