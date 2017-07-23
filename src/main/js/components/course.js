@@ -13,7 +13,6 @@ class Course extends React.Component {
 	handleDelete() {
 		this.props.onDelete(this.props.course);
 	}
-
 	render() {
 		return (
 			<tr>
@@ -29,11 +28,7 @@ class Course extends React.Component {
 				<td>{this.props.course.entity.minimumPassMarks}</td>
 				<td>{this.props.course.entity.department}</td>
 				<td>
-<<<<<<< HEAD
-					<button onClick={this.handleDelete}>Delete</button>
-=======
 					<button className="delete" onClick={this.handleDelete}>X</button>
->>>>>>> fd3504233e8758619d2da6d32f6c5eb7aea53621
 				</td>
 			</tr>
 		)
