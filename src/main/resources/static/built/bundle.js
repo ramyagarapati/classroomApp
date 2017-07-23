@@ -48929,6 +48929,14 @@
 					),
 					_react2.default.createElement(
 						'div',
+<<<<<<< HEAD
+=======
+						{ className: 'navLinks' },
+						navLinks
+					),
+					_react2.default.createElement(
+						'div',
+>>>>>>> fd3504233e8758619d2da6d32f6c5eb7aea53621
 						null,
 						_react2.default.createElement(
 							'table',
@@ -49112,10 +49120,17 @@
 						null,
 						_react2.default.createElement(
 							'div',
+<<<<<<< HEAD
 							{ className: 'dropdown' },
 							_react2.default.createElement(
 								'a',
 								{ className: 'btn btn-primary dropdown-toggle', type: 'button', 'data-toggle': 'dropdown', href: '#' },
+=======
+							{ className: 'btn-group' },
+							_react2.default.createElement(
+								'a',
+								{ className: 'btn dropdown-toggle', 'data-toggle': 'dropdown', href: '#' },
+>>>>>>> fd3504233e8758619d2da6d32f6c5eb7aea53621
 								'Action',
 								_react2.default.createElement('span', { className: 'caret' })
 							),
@@ -61967,6 +61982,14 @@
 					),
 					_react2.default.createElement(
 						'div',
+<<<<<<< HEAD
+=======
+						{ className: 'navLinks' },
+						navLinks
+					),
+					_react2.default.createElement(
+						'div',
+>>>>>>> fd3504233e8758619d2da6d32f6c5eb7aea53621
 						null,
 						_react2.default.createElement(
 							'table',
@@ -62946,6 +62969,14 @@
 					),
 					_react2.default.createElement(
 						'div',
+<<<<<<< HEAD
+=======
+						{ className: 'navLinks' },
+						navLinks
+					),
+					_react2.default.createElement(
+						'div',
+>>>>>>> fd3504233e8758619d2da6d32f6c5eb7aea53621
 						null,
 						_react2.default.createElement(
 							'table',
@@ -63122,8 +63153,8 @@
 						null,
 						_react2.default.createElement(
 							'button',
-							{ onClick: this.handleDelete },
-							'Delete'
+							{ className: 'delete', onClick: this.handleDelete },
+							'X'
 						)
 					)
 				);
