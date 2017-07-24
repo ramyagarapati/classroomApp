@@ -11,6 +11,7 @@ insert into course (id, active, course_type, department, description, manadatory
 insert into course (id, active, course_type, department, description, manadatory, maximum_marks, minimum_pass_marks,
  name, semester, year) values (506,1,'CLASSROOM','CSE','OOPSLA',1,100,50,'OOPSL','ONE','ONE');
 
+insert into user (id, name, password, role, user_type) values (10000,'admin','pass','ROLE_ADMIN','ADMIN');
 insert into user (id, name, password, role, user_type) values (10001,'durga','durga456','ROLE_STUDENT','STUDENT');
 insert into user (id, name, password, role, user_type) values (10002,'sai','sai123','ROLE_STUDENT','STUDENT');
 insert into user (id, name, password, role, user_type) values (10003,'kavya','kavya271','ROLE_STUDENT','STUDENT');

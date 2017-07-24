@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.student.manager.repository.UserRepository;
 
 @RestController
+@RequestMapping(path="/user")
 public class UserController {
 
 	@Autowired
 	private UserRepository userRepository;
 	
-	@RequestMapping(path="/user/role", method=RequestMethod.GET)
+	@RequestMapping(path="/role", method=RequestMethod.GET)
 	public String getRoleForUser(@PathVariable(name="name") String name) {
 		return this.userRepository.findRoleByName(name);
 	}

@@ -9,6 +9,7 @@ import Home from './components/home';
 import StudentPage from './components/studentPage';
 import StaffPage from './components/staffPage';
 import CoursesPage from './components/coursesPage';
+import NoAccess from './components/noAccess';
 
 class App extends React.Component {
 	
@@ -53,10 +54,11 @@ ReactDOM.render((
    <Router history={browserHistory} >
       <Route path = "/" component = {App}>
         <Route  path = "home" component = {Home} />
-        <Route authorize={['ADMIN','STUDENT']} path = "students" component = {StudentPage} />
-        <Route authorize={['ADMIN','STAFF']} path = "staff" component = {StaffPage} />
-        <Route authorize={['ADMIN']} path = "courses" component = {CoursesPage} />
+        <Route authorize={['admin','student']} path = "students" component = {StudentPage} />
+        <Route authorize={['admin','staff']} path = "staff" component = {StaffPage} />
+        <Route authorize={['admin']} path = "courses" component = {CoursesPage} />
       </Route>
+      <Route component={NoAccess} path="/noAccess" />
    </Router>
 	
 ), document.getElementById('react'));
