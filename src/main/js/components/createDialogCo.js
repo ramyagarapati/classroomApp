@@ -42,19 +42,19 @@ class CreateDialogCo extends React.Component {
   						<p><input type="text" ref ="description"
 							placeholder="description" className="field"/></p>
 							<p><select onChange={this.handleChange} ref ="year">
-							<option selected="selected">Year</option>
+							<option>Year</option>
 									<option value="ONE">1</option>
 									<option value="TWO">2</option>
 									<option value="THREE">3</option>
 									<option value="FOUR">4</option>
 								</select></p>
 							<p><select onChange={this.handleChange} ref ="semester">
-									<option selected="selected">Semester</option>
+									<option>Semester</option>
 									<option value="ONE">1</option>
 									<option value="TWO">2</option>
 								</select></p>
 								<p><select onChange={this.handleChange} ref ="courseType">
-								<option selected="selected">CourseType</option>
+								<option>CourseType</option>
 								<option value="CLASSROOM">classroom</option>
 								<option value="LAB">lab</option>
 							</select></p>
@@ -63,7 +63,7 @@ class CreateDialogCo extends React.Component {
 							<p><input type="number" ref ="minimumPassMarks"
 								placeholder="minimarks" className="field"/></p>
 							<p><select onChange={this.handleChange} ref ="department">
-							<option selected="selected">Department</option>
+							<option>Department</option>
 									<option value="CSE">Coumputer Science</option>
 									<option value="ECE">Electronics and Communications</option>
 								</select></p>

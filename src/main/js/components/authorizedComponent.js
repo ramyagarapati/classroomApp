@@ -16,10 +16,10 @@ class AuthorizedComponent extends React.Component {
     const { router } = this.context;
  
     // check if user data available
-    const user = JSON.parse(localStorage.getItem('user'));
-    if (!user) {
+    const role = JSON.parse(localStorage.getItem('role'));
+    if (!role) {
       // redirect to login if not
-      router.push('/login');
+      router.push('/');
     }
  
     // get all roles available for this route
@@ -30,8 +30,8 @@ class AuthorizedComponent extends React.Component {
       .value();
  
     // compare routes with user data
-    if (_.intersection(routeRoles, user.roles).length === 0) {
-      router.push('/not-authorized');
+    if (_.intersection(routeRoles, role).length === 0) {
+      router.push('/');
     }
   }
 }

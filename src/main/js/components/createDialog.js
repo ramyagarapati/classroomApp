@@ -42,25 +42,25 @@ class CreateDialog extends React.Component {
     						<p><input type="text" ref ="lastName"
 							placeholder="lastName" className="field"/></p>
     						<p><select onChange={this.handleChange} ref ="gender">
-									<option value="MALE">Male</option>
-									<option value="FEMALE">Female</option>
+									<option value="MALE" >Male</option>
+									<option value="FEMALE" >Female</option>
 								</select></p>
 							<p><select onChange={this.handleChange} ref ="currentYear">
-									<option selected="selected">Year</option>
+									<option >Year</option>
 									<option value="ONE">1</option>
 									<option value="TWO">2</option>
 									<option value="THREE">3</option>
 									<option value="FOUR">4</option>
 								</select></p>
 							<p><select onChange={this.handleChange} ref ="currentSemester">
-							<option selected="selected">Semester</option>
+							<option >Semester</option>
 									<option value="ONE">1</option>
 									<option value="TWO">2</option>
 								</select></p>
     						<p><input type="text" placeholder="E-mail" ref ="email"
 							 className="field"/></p>
 							<p><select onChange={this.handleChange}  ref ="department">
-									<option selected="selected">Department</option>
+									<option >Department</option>
 									<option value="CSE">Coumputer Science</option>
 									<option value="ECE">Electronics and Communications</option>
 								</select></p>
