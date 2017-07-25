@@ -6,24 +6,6 @@ import moment from 'moment';
 
 BigCalendar.momentLocalizer(moment);
 
-function Event({ event }) {
-	  return (
-	    <span>
-	      <strong>
-	      {event.title}
-	      </strong>
-	      { event.desc && (':  ' + event.desc)}
-    </span>
-  )
-}
-
-function EventAgenda({ event }) {
-  return <span>
-    <em style={{ color: 'magenta'}}>{event.title}</em>
-    <p>{ event.desc }</p>
-  </span>
-}
-
 class Home extends React.Component {
 	
 	constructor(props) {
@@ -33,14 +15,19 @@ class Home extends React.Component {
 		}
    render() {
       return (
-         <div className="home">          
-	         <BigCalendar
-	         events={events}
-	         startAccessor='startDate'
-	         endAccessor='endDate'
-	         defaultView='agenda'
-	       />
-         </div>
+         <div className="home">
+         	<div>Calender view of classroom schedule</div>
+	         <div className="jumbotron">
+		         <div className="container">
+			         <BigCalendar
+			         events={events}
+			         step={15}
+			         timeslots={8}
+			         defaultDate={new Date()}
+			       />
+			      </div>         
+			  </div>	    
+		  </div>
       )
    }
 }

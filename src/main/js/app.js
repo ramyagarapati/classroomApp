@@ -22,7 +22,6 @@ class App extends React.Component {
     } 
     render() {
       return (
-    	  
         <div className = "tabs">
         	<div>
 	        	<ul>
@@ -33,18 +32,17 @@ class App extends React.Component {
 	        		<label ><Link to="/students" >Student</Link></label>
 	        		</li>
 	        		<li className = "tab">
-	        		<label ><Link to="/staff">Staff</Link></label>
+	        		<label ><Link to="/staff" >Staff</Link></label>
 	        		</li>
 	        		<li className = "tab">
 	        		<label ><Link to="/courses">Courses</Link></label>
 	        		</li>
 	            </ul>    
-            </div>
-            <br />
+             </div> 
              <div>
              <ul><div>{this.props.children || <Home/>}</div></ul>
      		</div>
-            </div>     
+     	</div>
       )
    };
   

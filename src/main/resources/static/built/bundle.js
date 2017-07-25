@@ -176,7 +176,6 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement('br', null),
 	        _react2.default.createElement(
 	          'div',
 	          null,
@@ -48207,7 +48206,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-				value: true
+		value: true
 	});
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -48238,70 +48237,49 @@
 	
 	_reactBigCalendar2.default.momentLocalizer(_moment2.default);
 	
-	function Event(_ref) {
-				var event = _ref.event;
-	
-				return _react2.default.createElement(
-							'span',
-							null,
-							_react2.default.createElement(
-										'strong',
-										null,
-										event.title
-							),
-							event.desc && ':  ' + event.desc
-				);
-	}
-	
-	function EventAgenda(_ref2) {
-				var event = _ref2.event;
-	
-				return _react2.default.createElement(
-							'span',
-							null,
-							_react2.default.createElement(
-										'em',
-										{ style: { color: 'magenta' } },
-										event.title
-							),
-							_react2.default.createElement(
-										'p',
-										null,
-										event.desc
-							)
-				);
-	}
-	
 	var Home = function (_React$Component) {
-				_inherits(Home, _React$Component);
+		_inherits(Home, _React$Component);
 	
-				function Home(props) {
-							_classCallCheck(this, Home);
+		function Home(props) {
+			_classCallCheck(this, Home);
 	
-							//const role = JSON.parse(localStorage.getItem('role'));
-							var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+			//const role = JSON.parse(localStorage.getItem('role'));
+			var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 	
-							_this.notAuthorizedPath = '/noAccess';
-							return _this;
-				}
+			_this.notAuthorizedPath = '/noAccess';
+			return _this;
+		}
 	
-				_createClass(Home, [{
-							key: 'render',
-							value: function render() {
-										return _react2.default.createElement(
-													'div',
-													{ className: 'home' },
-													_react2.default.createElement(_reactBigCalendar2.default, {
-																events: _events2.default,
-																startAccessor: 'startDate',
-																endAccessor: 'endDate',
-																defaultView: 'agenda'
-													})
-										);
-							}
-				}]);
+		_createClass(Home, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'home' },
+					_react2.default.createElement(
+						'div',
+						null,
+						'Calender view of classroom schedule'
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'jumbotron' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'container' },
+							_react2.default.createElement(_reactBigCalendar2.default, {
+								events: _events2.default,
+								step: 15,
+								timeslots: 8,
+								defaultDate: new Date()
+							})
+						)
+					)
+				);
+			}
+		}]);
 	
-				return Home;
+		return Home;
 	}(_react2.default.Component);
 	
 	exports.default = Home;
@@ -48319,58 +48297,39 @@
 	  value: true
 	});
 	exports.default = [{
-	  'title': 'All Day Event',
+	  'title': 'Holiday - for fun',
 	  'allDay': true,
-	  'start': new Date(2017, 7, 0),
-	  'end': new Date(2017, 7, 1)
+	  'start': new Date(2017, 7, 26),
+	  'end': new Date(2017, 7, 27)
 	}, {
-	  'title': 'Long Event',
-	  'start': new Date(2017, 7, 25),
-	  'end': new Date(2017, 7, 26)
-	}, {
-	  'title': 'DTS STARTS',
-	  'start': new Date(2017, 7, 13, 0, 0, 0),
-	  'end': new Date(2017, 7, 20, 0, 0, 0)
-	}, {
-	  'title': 'DTS ENDS',
-	  'start': new Date(2017, 8, 1, 0, 0, 0),
-	  'end': new Date(2017, 8, 2, 0, 0, 0)
+	  'title': 'Demo',
+	  'start': new Date(2017, 7, 27),
+	  'end': new Date(2017, 7, 28),
+	  desc: 'Project demos'
 	}, {
 	  'title': 'Some Event',
 	  'start': new Date(2017, 7, 24, 0, 0, 0),
 	  'end': new Date(2017, 7, 25, 0, 0, 0)
 	}, {
 	  'title': 'Conference',
-	  'start': new Date(2017, 7, 11),
-	  'end': new Date(2017, 7, 13),
+	  'start': new Date(2017, 7, 28),
+	  'end': new Date(2017, 7, 29),
 	  desc: 'Big conference for important people'
 	}, {
-	  'title': 'Meeting',
-	  'start': new Date(2017, 7, 24, 10, 30, 0, 0),
-	  'end': new Date(2017, 7, 24, 12, 30, 0, 0),
-	  desc: 'Pre-meeting meeting, to prepare for the meeting'
+	  'title': 'CSE',
+	  'start': new Date(2017, 7, 25, 10, 0, 0, 0),
+	  'end': new Date(2017, 7, 25, 12, 0, 0, 0),
+	  desc: 'Operation systems - basics'
 	}, {
-	  'title': 'Lunch',
-	  'start': new Date(2017, 7, 24, 12, 0, 0, 0),
-	  'end': new Date(2017, 7, 24, 13, 0, 0, 0),
+	  'title': 'Lunch - break',
+	  'start': new Date(2017, 7, 25, 12, 0, 0, 0),
+	  'end': new Date(2017, 7, 25, 13, 0, 0, 0),
 	  desc: 'Power lunch'
 	}, {
-	  'title': 'Meeting',
+	  'title': 'LAB',
 	  'start': new Date(2017, 7, 24, 14, 0, 0, 0),
-	  'end': new Date(2017, 7, 24, 15, 0, 0, 0)
-	}, {
-	  'title': 'Happy Hour',
-	  'start': new Date(2017, 7, 24, 17, 0, 0, 0),
-	  'end': new Date(2017, 7, 24, 17, 30, 0, 0),
-	  desc: 'Most important meal of the day'
-	}, {
-	  'title': 'Dinner',
-	  'start': new Date(2017, 7, 24, 20, 0, 0, 0),
-	  'end': new Date(2017, 3, 24, 21, 0, 0, 0)
-	}, {
-	  'title': 'Birthday Party',
-	  'start': new Date(2017, 7, 24, 7, 0, 0),
-	  'end': new Date(2017, 7, 24, 10, 30, 0)
+	  'end': new Date(2017, 7, 24, 17, 0, 0, 0),
+	  desc: 'C++ project lab'
 	}];
 
 /***/ }),
