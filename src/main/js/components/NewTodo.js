@@ -39,10 +39,11 @@ class NewTodo extends React.Component {
     render() {
         return (
             <div style={this.styles.spacing} >
-                <p style={this.styles.prompt}>What do you want to get done?</p>
-                <TextField 
+                <p style={this.styles.prompt}>What do you want to get done? </p>
+                <TextField
+
                     onKeyDown={this.onKeyDown} 
-                    hintText="New todo"
+                    hintText={"New todo"}
                     fullWidth={true}
                 />
             </div>

@@ -10,6 +10,7 @@ import StudentPage from './components/studentPage';
 import StaffPage from './components/staffPage';
 import CoursesPage from './components/coursesPage';
 import NoAccess from './components/noAccess';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends React.Component {
 	
@@ -22,6 +23,7 @@ class App extends React.Component {
     } 
     render() {
       return (
+        <MuiThemeProvider>    		  
         <div className = "tabs">
         	<div>
 	        	<ul>
@@ -43,6 +45,7 @@ class App extends React.Component {
              <ul><div>{this.props.children || <Home/>}</div></ul>
      		</div>
      	</div>
+     	</MuiThemeProvider>
       )
    };
   
