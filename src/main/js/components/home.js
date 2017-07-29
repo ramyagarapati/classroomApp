@@ -3,11 +3,11 @@ import React from 'react';
 import events from './events';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import NewTodo from './NewTodo';
 
 BigCalendar.momentLocalizer(moment);
-
 class Home extends React.Component {
-	
+
 	constructor(props) {
 		super(props);
 		//const role = JSON.parse(localStorage.getItem('role'));
@@ -17,6 +17,7 @@ class Home extends React.Component {
       return (
          <div className="home">
          	<div>Calender view of classroom schedule</div>
+         	<NewTodo/>
 	         <div className="jumbotron">
 		         <div className="container">
 			         <BigCalendar
@@ -27,9 +28,8 @@ class Home extends React.Component {
 			       />
 			      </div>         
 			  </div>	    
-		  </div>
+		</div>
       )
    }
 }
-
 export default Home;
