@@ -216,7 +216,9 @@ class StudentPage extends React.Component {
 	render() {
 		return (
 			<div>
+				<br/>
 				<CreateDialog attributes={this.state.attributes} onCreate={this.onCreate}/>
+				<br/>
 				<StudentList page={this.state.page}
 							  students={this.state.students}
 							  links={this.state.links}

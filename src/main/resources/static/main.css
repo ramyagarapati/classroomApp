@@ -16,17 +16,24 @@ body{
 	float:right;
 	display:inline-block;
 	text-align:right;
-	margin-top:35px;
-	text-color:#FFFFFF;
+	margin-top:10px;
+	margin-left : 200px;
+	text-color:#0077b3;
 	
+}
+
+.pageControls {
+		text-color:#0077b3;
+		font-weight: normal;
+		text-shadow: none;
 }
 .pages2{
 	float:left;
-	margin-top:17px;
-	margin-left:-50px;
+	margin-top:10px;
 	display:inline-block;
 	text-align:left;
-	text-color:#FFFFFF;
+	margin-right : 200px;
+	text-color:#0077b3;
 	
 }
 
@@ -92,6 +99,15 @@ body{
   font-weight : bold;
   line-height: 20px;
   cursor: pointer;
+}
+.tableControls {
+	position: relative;
+  	float : left;
+  	width: auto;
+}
+.tables {
+	position: relative;
+  	float : left;
 }
 .navLinks {
 	position: relative;
@@ -177,15 +193,28 @@ background-image: url('error.png');
 	border-radius:5px;
 }
 
-table {
+table, table.standard {
 	border-collapse:collapse;
+	display :table;
+	position : relative;
+	max-width : 90%;
+	max-height : 90%;
 	margin-left:-1px;
 	margin-top:10px;
 	clear:both;
 	border-spacing: 0;
 }
- th {
+ 
+.standardTh {
     padding: 5px 25px;
+    background-color: #0066CC;
+    text-color: #E6E6FA;
+ 	text-align:center;
+   font-family:Tahoma, sans-serif;
+   font-size:15px;  
+}
+ th, th.standardTh {
+    padding: 5px 5px;
     background-color: #0066CC;
     text-color: #E6E6FA;
  	text-align:center;
@@ -200,7 +229,7 @@ table {
 	display: block;
 	position: relative;
 }
-td{
+td, td.standardTd{
 	text-align:center;
 	 /*border: 1px solid #FFF;*/
 	 padding: 5px 22px;

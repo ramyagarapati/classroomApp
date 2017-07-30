@@ -2,12 +2,19 @@
 import React from 'react';
 import events from './events';
 import BigCalendar from 'react-big-calendar';
+import { Link } from 'react-router';
 import moment from 'moment';
-import NewTodo from './NewTodo';
+import RaisedButton from 'material-ui/RaisedButton';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+
+const style = {
+  marginRight: 20,
+};
 
 BigCalendar.momentLocalizer(moment);
 class Home extends React.Component {
-
+	
 	constructor(props) {
 		super(props);
 		//const role = JSON.parse(localStorage.getItem('role'));
@@ -16,8 +23,9 @@ class Home extends React.Component {
    render() {
       return (
          <div className="home">
-         	<div>Calender view of classroom schedule</div>
-         	<NewTodo/>
+         	<FloatingActionButton style={style} href="/home/createEvent">
+         		<ContentAdd />
+         	</FloatingActionButton>
 	         <div className="jumbotron">
 		         <div className="container">
 			         <BigCalendar

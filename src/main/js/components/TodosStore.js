@@ -6,7 +6,7 @@ import TodoData from './TodoData';
 =======
 >>>>>>> 1275fd570819b21ef340c1b29bd9d13ae2cae79a
 
-const URL = 'http://localhost:3001/todos'
+const URL = 'http://localhost:8080/todos'
 
 function getAll() {
   return new Promise((resolve, reject) => {

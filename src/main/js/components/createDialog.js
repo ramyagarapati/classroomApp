@@ -1,6 +1,7 @@
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class CreateDialog extends React.Component {
 

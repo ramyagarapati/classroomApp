@@ -75,8 +75,11 @@ class NewTodo extends React.Component {
             <div style={this.styles.spacing} >
                 <p style={this.styles.prompt}>What do you want to get done? </p>
                 <TextField
+<<<<<<< Updated upstream
 >>>>>>> 1275fd570819b21ef340c1b29bd9d13ae2cae79a
 
+=======
+>>>>>>> Stashed changes
                     onKeyDown={this.onKeyDown} 
                     hintText={"New todo"}
                     fullWidth={true}

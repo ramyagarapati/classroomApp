@@ -3,6 +3,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Student from './student';
+import Divider from 'material-ui/Divider';
+import RaisedButton from 'material-ui/RaisedButton';
+import {
+	  Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,
+	} from 'material-ui/Table';
+	
+	const style = {
+			  margin: 12,
+			};
 class StudentList extends React.Component {
 
 	constructor(props) {
@@ -44,7 +53,7 @@ class StudentList extends React.Component {
 
 	render() {
 	var pageInfo = this.props.page.hasOwnProperty("number") ?
-		<h3 className="pages">Page {this.props.page.number + 1} of {this.props.page.totalPages}</h3> : null;
+		<h3 className="pageControls" >Page {this.props.page.number + 1} of {this.props.page.totalPages}</h3> : null;
 		
 		var students = this.props.students.map(student =>
 			<Student key={student.entity._links.self.href}
@@ -56,44 +65,52 @@ class StudentList extends React.Component {
 		
 		var navLinks = [];
 		if ("first" in this.props.links) {
-			navLinks.push(<button key="first" onClick={this.handleNavFirst}>&lt;&lt; First</button>);
+			navLinks.push(<RaisedButton key="first" onClick={this.handleNavFirst} label="&lt;&lt; First"/>);
 		}
 		if ("prev" in this.props.links) {
-			navLinks.push(<button key="prev" onClick={this.handleNavPrev}>&lt; Prev</button>);
+			navLinks.push(<RaisedButton key="prev" onClick={this.handleNavPrev} label="&lt; Prev"/>);
 		}
 		if ("next" in this.props.links) {
-			navLinks.push(<button key="next" onClick={this.handleNavNext}>Next &gt;</button>);
+			navLinks.push(<RaisedButton key="next" onClick={this.handleNavNext} label="Next &gt;"/>);
 		}
 		if ("last" in this.props.links) {
-			navLinks.push(<button key="last" onClick={this.handleNavLast}>Last &gt;&gt; </button>);
+			navLinks.push(<RaisedButton key="last" onClick={this.handleNavLast} label="Last &gt;&gt; "/>);
 		}
 		
 		return (
 			<div>
-				{pageInfo}
-				<div className="pages2"><label><h3>
-				Students per page - <input ref="pageSize" type="number" defaultValue={this.props.pageSize} onInput={this.handleInput}/></h3></label></div>
-				<div>
-					<table>
-						<tbody>
-							<tr>
-								<th>First Name</th>
-								<th>Last Name</th>
-								<th>E-mail</th>
-								<th>Gender</th>
-								<th>Year</th>
-								<th>Semester</th>
-								<th>Department</th>
-								<th>Join Date</th>
-								<th>Graduation Year</th>
-								<th></th>
-							</tr>
+				<div className="tableControls">
+					<div className="pages2">
+						<h3 className="pageControls" >Page size -<input ref="pageSize" type="number" defaultValue={this.props.pageSize} onInput={this.handleInput}/></h3>
+					</div>
+				</div>
+				<br/>
+				<div className="tables">
+					<br/>
+					<Divider />
+					<Table className="standard">
+						<TableHeader>
+							<TableRow>
+								<TableHeaderColumn className="standardTh">First Name</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh">Last Name</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh">E-mail</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh">Gender</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh">Year</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh">Semester</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh">Department</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh">Join Date</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh">Graduation Year</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh"></TableHeaderColumn>
+							</TableRow>
+						</TableHeader>
+						<TableBody className="standardTbody">
 							{students}
-						</tbody>
-					</table>
+						</TableBody>
+					</Table>
 				</div>
 				<div className="navLinks">
 					{navLinks}
+					{pageInfo}
 				</div>
 			</div>
 		)
