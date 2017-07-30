@@ -118,27 +118,19 @@ body{
 }
 .tabs {
   position: relative;
-  float : left;
-  min-height: 300px; /* This part sucks */
   clear: both;
   margin: 0px 50px 20px 0px;
-  background: #E6E6FA;
 }
 .tab {
-  float: left;
   text-size:50px;
+  font-weight: bold;
+  color: #333399;
 }
 
 .tab label{
-width:200px;
-box-shadow: -2px 2px 4px rgba(1,1,1,1);
-padding:5px;
- margin-left: -1px; 
-  position: relative;
-    top: -20px;
-  -webkit-transition: background-color .17s linear;
-display:inline-block;
-background-color:#3CD6C9;
+	text-size:50px;
+  	font-weight: bold;
+    color: #333399;	
 }
 .tab label a{
 display:block;
@@ -194,32 +186,27 @@ background-image: url('error.png');
 }
 
 table, table.standard {
-	border-collapse:collapse;
-	display :table;
-	position : relative;
-	max-width : 90%;
-	max-height : 90%;
-	margin-left:-1px;
-	margin-top:10px;
-	clear:both;
-	border-spacing: 0;
+	border-collapse:collapse; !important;
+	display :table; !important;
+	position : relative; !important;
+	margin-left:-1px; !important;
+	margin-top:10px; !important;
+	clear:both; !important;
+	border-spacing: 0; !important;
 }
  
-.standardTh {
-    padding: 5px 25px;
-    background-color: #0066CC;
-    text-color: #E6E6FA;
- 	text-align:center;
-   font-family:Tahoma, sans-serif;
-   font-size:15px;  
+.standardThead {
+    background-color: #0066CC; !important;
+   font-family:Tahoma, sans-serif; !important;
+   font-size:15px;   !important;
 }
  th, th.standardTh {
-    padding: 5px 5px;
-    background-color: #0066CC;
-    text-color: #E6E6FA;
- 	text-align:center;
-   font-family:Tahoma, sans-serif;
-   font-size:15px;  
+    padding: 5px 5px; !important;
+    background-color: #0066CC; !important;
+    text-color: #E6E6FA; !important;
+ 	text-align:center; !important;
+   font-family:Tahoma, sans-serif; !important;
+   font-size:15px;   !important;
 }
 .padding{
 	padding:5px 30px;
@@ -229,9 +216,8 @@ table, table.standard {
 	display: block;
 	position: relative;
 }
-td, td.standardTd{
-	text-align:center;
-	 /*border: 1px solid #FFF;*/
+td, td.standardTd {
+	 text-align:left;
 	 padding: 5px 22px;
 	 font-family:Tahoma, sans-serif;
 	 font-size:15px;
@@ -358,3 +344,52 @@ background:-webkit-linear-gradient(top,rgba(33,105,243,0)0%,rgba(33,105,243,0.55
 
 
 .meta-info p { font-family: 'Fenix', serif; font-style: italic; color: #666; font-size: 16px; }
+
+/* #Tablet (Portrait)
+================================================== */
+/* Note: Design for a width of 768px */
+@media all and (min-width: 768px) and (max-width: 959px) {
+    td.standardTdA ,th.standardTdA {
+        display:none;
+        width:0;
+        height:0;
+        opacity:0;
+        visibility: collapse;       
+    } 
+}
+/* #Mobile (Landscape)
+================================================== */
+/* Note: Design for a width of 600px */
+@media all and (min-width: 600px) and (max-width: 767px) {
+    td.standardTdA , th.standardTdA {
+        display:none;
+        width:0;
+        height:0;
+        opacity:0;
+        visibility: collapse;
+    } 
+}
+/* #Mobile (Landscape)
+================================================== */
+/* Note: Design for a width of 480px */
+@media all and (min-width: 480px) and (max-width: 599px) {
+    td.standardTdA , th.standardTdA {
+        display:none;
+        width:0;
+        height:0;
+        opacity:0;
+        visibility: collapse;
+    } 
+}
+/*  #Mobile (Portrait)
+================================================== */
+/* Note: Design for a width of 320px */
+@media all and (max-width: 479px) {
+    td.standardTdA , th.standardTdA {
+        display:none;
+        width:0;
+        height:0;
+        opacity:0;
+        visibility: collapse;
+    }    
+}

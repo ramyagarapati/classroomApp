@@ -16,47 +16,34 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 //From https://github.com/oliviertassinari/react-swipeable-views
 import SwipeableViews from 'react-swipeable-views';
 
-const styles = {
-		  headline: {
-		    fontSize: 24,
-		    paddingTop: 16,
-		    marginBottom: 12,
-		    fontWeight: 400,
-		  },
-		  slide: {
-		    padding: 10,
-		  },
-		};
-
 class App extends React.Component {
 	
 	  constructor(props) {
 		    super();
 		    this.state = {
-		      // Takes active tab from props if it is defined there
 		      activeTab: props.activeTab || 1,
-		      slideIndex: 0
+		      slideIndex: 'a',
 		  };
     }
 	
-   handleChange(value){
-	    this.setState({
-	      slideIndex: value,
-	  });
+	handleChange(value) {
+		this.setState({
+			slideIndex : value,
+		});
 	};
 	
     render() {
       return (
         <MuiThemeProvider>
-        	<div>
-	         <Tabs onChange={this.handleChange} value={this.state.slideIndex} >
-		        <Tab label={<Link to="/home" ><label>Home</label></Link>} value={0} />
-		        <Tab label={<Link to="/students" ><label>Students</label></Link>} value={1} />
-		        <Tab label={<Link to="/staff" ><label>Staff</label></Link>} value={2} />
-		        <Tab label={<Link to="/courses" ><label>Courses</label></Link>} value={3} />
-		 	 </Tabs>
-	         <div>{this.props.children || <Home/>}</div>
-	         </div>
+	        <div>
+		        <Tabs className="tabs" onChange={this.handleChange} value={this.state.slideIndex} >
+			       	<Tab className="tab" label={<Link to="/home" ><label>Home</label></Link>} value='a' ></Tab>
+			       	<Tab className="tab" label={<Link to="/students" ><label>Students</label></Link>} value='b' />
+			       	<Tab className="tab" label={<Link to="/staff" ><label>Staff</label></Link>} value='c'/>
+			       	<Tab className="tab" label={<Link to="/courses" ><label>Courses</label></Link>}  value='d' />
+		       	 </Tabs>
+	        <div>{this.props.children || <Home/>}</div>
+	        </div>
      	</MuiThemeProvider>
       )
    };

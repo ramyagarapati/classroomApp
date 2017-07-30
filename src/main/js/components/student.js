@@ -8,6 +8,13 @@ import {
 	  Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,
 	} from 'material-ui/Table';
 
+	const styles = {
+			rowStyle : {textAlign: 'right',
+				fontSize:'14px',
+				fontFamily:'Tahoma'
+				}
+			};
+	
 class Student extends React.Component {
 
 	constructor(props) {
@@ -25,19 +32,18 @@ class Student extends React.Component {
 	
 	render() {
 		return (
-			<TableRow >
-				<TableRowColumn ></TableRowColumn>
-				<TableRowColumn className="standardTd" >{this.props.student.entity.firstName}</TableRowColumn>
-				<TableRowColumn className="standardTd">{this.props.student.entity.lastName}</TableRowColumn>
-				<TableRowColumn className="standardTd">{this.props.student.entity.email}</TableRowColumn>
-				<TableRowColumn className="standardTd">{this.props.student.entity.gender}</TableRowColumn>
-				<TableRowColumn className="standardTd">{this.props.student.entity.currentYear}</TableRowColumn>
-				<TableRowColumn className="standardTd">{this.props.student.entity.currentSemester}</TableRowColumn>
-				<TableRowColumn className="standardTd">{this.props.student.entity.department}</TableRowColumn>
-				<TableRowColumn className="standardTd">{this.props.student.entity.joinDate}</TableRowColumn>
-				<TableRowColumn className="standardTd">{this.props.student.entity.graduationYear}</TableRowColumn>
-				<TableRowColumn className="standardTd">
-					<DropDownMenu value={this.state.value} onChange={this.handleChange}>
+			<TableRow selectable="false" >
+				<TableRowColumn className="standardTd" style={styles.rowStyle} >{this.props.student.entity.firstName}</TableRowColumn>
+				<TableRowColumn className="standardTd" style={styles.rowStyle} >{this.props.student.entity.lastName}</TableRowColumn>
+				<TableRowColumn className="standardTdA" style={styles.rowStyle} >{this.props.student.entity.email}</TableRowColumn>
+				<TableRowColumn className="standardTdA" style={styles.rowStyle} >{this.props.student.entity.gender}</TableRowColumn>
+				<TableRowColumn className="standardTd" style={styles.rowStyle} >{this.props.student.entity.currentYear}</TableRowColumn>
+				<TableRowColumn className="standardTd" style={styles.rowStyle} >{this.props.student.entity.currentSemester}</TableRowColumn>
+				<TableRowColumn className="standardTd" style={styles.rowStyle} >{this.props.student.entity.department}</TableRowColumn>
+				<TableRowColumn className="standardTdA" style={styles.rowStyle} >{this.props.student.entity.joinDate}</TableRowColumn>
+				<TableRowColumn className="standardTdA" style={styles.rowStyle} >{this.props.student.entity.graduationYear}</TableRowColumn>
+				<TableRowColumn className="standardTdA" style={styles.rowStyle} >
+					<DropDownMenu value={this.state.value} onChange={this.handleChange} >
 			          <MenuItem value={1} primaryText="Update" />
 			          <MenuItem value={2} primaryText="Delete" />
 					</DropDownMenu>

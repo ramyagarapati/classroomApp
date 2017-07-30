@@ -9,9 +9,16 @@ import {
 	  Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,
 	} from 'material-ui/Table';
 	
-	const style = {
-			  margin: 12,
-			};
+const styles = {
+		headStyle : {textAlign: 'center',
+			backgroundColor: '#0066CC',
+			fontSize:'15px',
+			textColor: '#FAFAFA',
+			fontFamily:'Tahoma',
+			fontWeight : 'bold'
+			}
+		};
+
 class StudentList extends React.Component {
 
 	constructor(props) {
@@ -30,26 +37,26 @@ class StudentList extends React.Component {
 		} else {
 			ReactDOM.findDOMNode(this.refs.pageSize).value = pageSize.substring(0, pageSize.length - 1);
 		}
-	}
+	};
 	handleNavFirst(e) {
 		e.preventDefault();
 		this.props.onNavigate(this.props.links.first.href);
-	}
+	};
 
 	handleNavPrev(e) {
 		e.preventDefault();
 		this.props.onNavigate(this.props.links.prev.href);
-	}
+	};
 
 	handleNavNext(e) {
 		e.preventDefault();
 		this.props.onNavigate(this.props.links.next.href);
-	}
+	};
 
 	handleNavLast(e) {
 		e.preventDefault();
 		this.props.onNavigate(this.props.links.last.href);
-	}
+	};
 
 	render() {
 	var pageInfo = this.props.page.hasOwnProperty("number") ?
@@ -85,25 +92,25 @@ class StudentList extends React.Component {
 					</div>
 				</div>
 				<br/>
-				<div className="tables">
+				<div className="tables" >
 					<br/>
 					<Divider />
 					<Table className="standard">
 						<TableHeader>
-							<TableRow>
-								<TableHeaderColumn className="standardTh">First Name</TableHeaderColumn>
-								<TableHeaderColumn className="standardTh">Last Name</TableHeaderColumn>
-								<TableHeaderColumn className="standardTh">E-mail</TableHeaderColumn>
-								<TableHeaderColumn className="standardTh">Gender</TableHeaderColumn>
-								<TableHeaderColumn className="standardTh">Year</TableHeaderColumn>
-								<TableHeaderColumn className="standardTh">Semester</TableHeaderColumn>
-								<TableHeaderColumn className="standardTh">Department</TableHeaderColumn>
-								<TableHeaderColumn className="standardTh">Join Date</TableHeaderColumn>
-								<TableHeaderColumn className="standardTh">Graduation Year</TableHeaderColumn>
-								<TableHeaderColumn className="standardTh"></TableHeaderColumn>
+							<TableRow selectable="false" >
+								<TableHeaderColumn className="standardTh" style={styles.headStyle} >First Name</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh" style={styles.headStyle} >Last Name</TableHeaderColumn>
+								<TableHeaderColumn className="standardTdA" style={styles.headStyle} >E-mail</TableHeaderColumn>
+								<TableHeaderColumn className="standardTdA" style={styles.headStyle} >Gender</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh" style={styles.headStyle} >Year</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh" style={styles.headStyle} >Semester</TableHeaderColumn>
+								<TableHeaderColumn className="standardTh" style={styles.headStyle} >Department</TableHeaderColumn>
+								<TableHeaderColumn className="standardTdA" style={styles.headStyle} >Join Date</TableHeaderColumn>
+								<TableHeaderColumn className="standardTdA" style={styles.headStyle} >Graduation Year</TableHeaderColumn>
+								<TableHeaderColumn className="standardTdA" style={styles.headStyle} ></TableHeaderColumn>
 							</TableRow>
 						</TableHeader>
-						<TableBody className="standardTbody">
+						<TableBody className="standardTbody" >
 							{students}
 						</TableBody>
 					</Table>
