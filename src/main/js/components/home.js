@@ -5,7 +5,7 @@ import BigCalendar from 'react-big-calendar';
 import { Link } from 'react-router';
 import moment from 'moment';
 import RaisedButton from 'material-ui/RaisedButton';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
+import FlatButton from 'material-ui/FlatButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
 const style = {
@@ -23,19 +23,16 @@ class Home extends React.Component {
    render() {
       return (
          <div className="home">
-         	<FloatingActionButton style={style} href="/home/createEvent">
-         		<ContentAdd />
-         	</FloatingActionButton>
-	         <div className="jumbotron">
-		         <div className="container">
-			         <BigCalendar
-			         events={events}
-			         step={15}
-			         timeslots={8}
-			         defaultDate={new Date()}
-			       />
-			      </div>         
-			  </div>	    
+         	<FlatButton className="but" label="Schedule Session" fullWidth={true} />
+         	<br/>
+	         <div className="container">
+		         <BigCalendar
+		         events={events}
+		         step={15}
+		         timeslots={8}
+		         defaultDate={new Date()}
+		       />
+		      </div>         	    
 		</div>
       )
    }

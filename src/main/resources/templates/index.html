@@ -23,6 +23,7 @@
 	</script>
 </head>
 <body class="content">
+	<div>
 	<div style="display: none;">
 		<span id="adminTag" th:if="${#strings.contains(#authentication.principal.authorities,'ADMIN')}" ></span>
 		<span id="staffTag" th:if="${#strings.contains(#authentication.principal.authorities,'STAFF')}"></span>
@@ -49,11 +50,9 @@
     </div>
     
     <div id="react" class="panel1"> </div>
-    <!-- end::logout[] -->
-	<br/>
-	<br/>
-	<div class="footer" >© RGUKT - 2017</div>
-	
+    <div class="footer">© RGUKT - 2017</div>
+    <!-- end::logout[] -->	
+    </div>
     <script src="built/bundle.js"></script>
 
 </body>

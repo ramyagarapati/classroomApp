@@ -8,6 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {
 	  Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn,
 	} from 'material-ui/Table';
+import Slider from 'material-ui/Slider';
 	
 const styles = {
 		headStyle : {textAlign: 'center',
@@ -19,6 +20,9 @@ const styles = {
 			}
 		};
 
+const min = 1;
+const max = 15;
+
 class StudentList extends React.Component {
 
 	constructor(props) {
@@ -27,17 +31,16 @@ class StudentList extends React.Component {
 		this.handleNavPrev = this.handleNavPrev.bind(this);
 		this.handleNavNext = this.handleNavNext.bind(this);
 		this.handleNavLast = this.handleNavLast.bind(this);
-		this.handleInput = this.handleInput.bind(this);
-	}		
-	handleInput(e) {
-		e.preventDefault();
-		var pageSize = ReactDOM.findDOMNode(this.refs.pageSize).value;
-		if (/^[0-9]+$/.test(pageSize)) {
-			this.props.updatePageSize(pageSize);
-		} else {
-			ReactDOM.findDOMNode(this.refs.pageSize).value = pageSize.substring(0, pageSize.length - 1);
+		this.handleSlider = this.handleSlider.bind(this);
+		this.state = { selected:false,
+				slider: 4, };
 		}
+
+	handleSlider(event, value) {
+		 this.setState({slider: value});
+		 this.props.updatePageSize(value);
 	};
+		  
 	handleNavFirst(e) {
 		e.preventDefault();
 		this.props.onNavigate(this.props.links.first.href);
@@ -87,17 +90,16 @@ class StudentList extends React.Component {
 		return (
 			<div>
 				<div className="tableControls">
-					<div className="pages2">
-						<h3 className="pageControls" >Page size -<input ref="pageSize" type="number" defaultValue={this.props.pageSize} onInput={this.handleInput}/></h3>
-					</div>
+					{pageInfo}
 				</div>
-				<br/>
+				
 				<div className="tables" >
-					<br/>
+					<Slider ref="pageSize1" min={min} max={max} step={1} value={this.state.slider}
+					onChange={this.handleSlider} /> 
 					<Divider />
 					<Table className="standard">
 						<TableHeader>
-							<TableRow selectable="false" >
+							<TableRow selectable={this.state.selected} >
 								<TableHeaderColumn className="standardTh" style={styles.headStyle} >First Name</TableHeaderColumn>
 								<TableHeaderColumn className="standardTh" style={styles.headStyle} >Last Name</TableHeaderColumn>
 								<TableHeaderColumn className="standardTdA" style={styles.headStyle} >E-mail</TableHeaderColumn>
@@ -117,7 +119,6 @@ class StudentList extends React.Component {
 				</div>
 				<div className="navLinks">
 					{navLinks}
-					{pageInfo}
 				</div>
 			</div>
 		)
